@@ -9,6 +9,7 @@ local_settings.py
 
 # Ignore the animation and figure files
 *.gif
+*.mp4
 **/figs/**
 
 # Ignore the Jupyter Notebook checkpoints
