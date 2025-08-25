@@ -18,6 +18,8 @@ chapters:
   title: Baseline Models
 - file: chapters/30/mapping
   title: Mapping between UV and X-ray
+- file: chapters/40/decomposition
+  title: Curve Decomposition
 - file: chapters/70/data_survey
   title: Data Survey
 - file: chapters/80/about_data_sets
