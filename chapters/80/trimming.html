@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.1. Trimming &#8212; Molass Technical Report</title>
+    <title>9.1. Trimming &#8212; Molass Technical Report</title>
   
   
   
@@ -61,8 +61,8 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8.2. Generation" href="generation.html" />
-    <link rel="prev" title="8. About Example Data Sets" href="about_data_sets.html" />
+    <link rel="next" title="9.2. Generation" href="generation.html" />
+    <link rel="prev" title="9. About Example Data Sets" href="about_data_sets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,16 +187,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">7. Data Survey</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="about_data_sets.html">8. About Example Data Sets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. Trimming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generation.html">8.2. Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_settings.html">8.3. Local Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">8. Data Survey</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="about_data_sets.html">9. About Example Data Sets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generation.html">9.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_settings.html">9.3. Local Settings</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">9. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">9.1. Simple Animation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">9.2. SEC Simulation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">10. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">10.1. Simple Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">10.2. SEC Simulation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -413,7 +414,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="trimming">
-<h1><span class="section-number">8.1. </span>Trimming<a class="headerlink" href="#trimming" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9.1. </span>Trimming<a class="headerlink" href="#trimming" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.Global.Options</span> <span class="kn">import</span> <span class="n">set_molass_options</span>
@@ -427,8 +428,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/55284ae8fcb87ea1910370357e8f4323f6a92294dffacc739685eab961731151.png" src="../../_images/55284ae8fcb87ea1910370357e8f4323f6a92294dffacc739685eab961731151.png" />
-<img alt="../../_images/489141d8688eafb36ff335ef51a4c3c6944d31b0310fea7c41b64419cf10e9c4.png" src="../../_images/489141d8688eafb36ff335ef51a4c3c6944d31b0310fea7c41b64419cf10e9c4.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ssd0</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">original_data_folder</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">plot_result0</span> <span class="o">=</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">();</span>
+
+<span class="ne">AttributeError</span>: &#39;SecSaxsData&#39; object has no attribute &#39;plot_trimming_info&#39;
+</pre></div>
+</div>
+<img alt="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" src="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -562,9 +572,7 @@ document.write(`
 [115] copying from D:\PyTools\Data\sample_data\SAMPLE_00115_sub.dat to SAMPLE_00048_.dat
 [116] copying from D:\PyTools\Data\sample_data\SAMPLE_00116_sub.dat to SAMPLE_00049_.dat
 [117] copying from D:\PyTools\Data\sample_data\SAMPLE_00117_sub.dat to SAMPLE_00050_.dat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[118] copying from D:\PyTools\Data\sample_data\SAMPLE_00118_sub.dat to SAMPLE_00051_.dat
+[118] copying from D:\PyTools\Data\sample_data\SAMPLE_00118_sub.dat to SAMPLE_00051_.dat
 [119] copying from D:\PyTools\Data\sample_data\SAMPLE_00119_sub.dat to SAMPLE_00052_.dat
 [120] copying from D:\PyTools\Data\sample_data\SAMPLE_00120_sub.dat to SAMPLE_00053_.dat
 [121] copying from D:\PyTools\Data\sample_data\SAMPLE_00121_sub.dat to SAMPLE_00054_.dat
@@ -646,9 +654,7 @@ document.write(`
 [197] copying from D:\PyTools\Data\sample_data\SAMPLE_00197_sub.dat to SAMPLE_00130_.dat
 [198] copying from D:\PyTools\Data\sample_data\SAMPLE_00198_sub.dat to SAMPLE_00131_.dat
 [199] copying from D:\PyTools\Data\sample_data\SAMPLE_00199_sub.dat to SAMPLE_00132_.dat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[200] copying from D:\PyTools\Data\sample_data\SAMPLE_00200_sub.dat to SAMPLE_00133_.dat
+[200] copying from D:\PyTools\Data\sample_data\SAMPLE_00200_sub.dat to SAMPLE_00133_.dat
 [201] copying from D:\PyTools\Data\sample_data\SAMPLE_00201_sub.dat to SAMPLE_00134_.dat
 [202] copying from D:\PyTools\Data\sample_data\SAMPLE_00202_sub.dat to SAMPLE_00135_.dat
 [203] copying from D:\PyTools\Data\sample_data\SAMPLE_00203_sub.dat to SAMPLE_00136_.dat
@@ -697,9 +703,7 @@ document.write(`
 [246] copying from D:\PyTools\Data\sample_data\SAMPLE_00246_sub.dat to SAMPLE_00179_.dat
 [247] copying from D:\PyTools\Data\sample_data\SAMPLE_00247_sub.dat to SAMPLE_00180_.dat
 [248] copying from D:\PyTools\Data\sample_data\SAMPLE_00248_sub.dat to SAMPLE_00181_.dat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[249] copying from D:\PyTools\Data\sample_data\SAMPLE_00249_sub.dat to SAMPLE_00182_.dat
+[249] copying from D:\PyTools\Data\sample_data\SAMPLE_00249_sub.dat to SAMPLE_00182_.dat
 [250] copying from D:\PyTools\Data\sample_data\SAMPLE_00250_sub.dat to SAMPLE_00183_.dat
 [251] copying from D:\PyTools\Data\sample_data\SAMPLE_00251_sub.dat to SAMPLE_00184_.dat
 [252] copying from D:\PyTools\Data\sample_data\SAMPLE_00252_sub.dat to SAMPLE_00185_.dat
@@ -772,9 +776,7 @@ document.write(`
 [319] copying from D:\PyTools\Data\sample_data\SAMPLE_00319_sub.dat to SAMPLE_00252_.dat
 [320] copying from D:\PyTools\Data\sample_data\SAMPLE_00320_sub.dat to SAMPLE_00253_.dat
 [321] copying from D:\PyTools\Data\sample_data\SAMPLE_00321_sub.dat to SAMPLE_00254_.dat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[322] copying from D:\PyTools\Data\sample_data\SAMPLE_00322_sub.dat to SAMPLE_00255_.dat
+[322] copying from D:\PyTools\Data\sample_data\SAMPLE_00322_sub.dat to SAMPLE_00255_.dat
 [323] copying from D:\PyTools\Data\sample_data\SAMPLE_00323_sub.dat to SAMPLE_00256_.dat
 [324] copying from D:\PyTools\Data\sample_data\SAMPLE_00324_sub.dat to SAMPLE_00257_.dat
 [325] copying from D:\PyTools\Data\sample_data\SAMPLE_00325_sub.dat to SAMPLE_00258_.dat
@@ -806,9 +808,7 @@ document.write(`
 [351] copying from D:\PyTools\Data\sample_data\SAMPLE_00351_sub.dat to SAMPLE_00284_.dat
 [352] copying from D:\PyTools\Data\sample_data\SAMPLE_00352_sub.dat to SAMPLE_00285_.dat
 [353] copying from D:\PyTools\Data\sample_data\SAMPLE_00353_sub.dat to SAMPLE_00286_.dat
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temporary directory zipped at: C:\Users\takahashi\AppData\Local\Temp\tutorial_data.zip
+Temporary directory zipped at: C:\Users\takahashi\AppData\Local\Temp\tutorial_data.zip
 </pre></div>
 </div>
 </div>
@@ -823,7 +823,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/fa2b2bf588dbf3e91ebe931138a81a1cb1814913eb9d0c6ca1d45ffcce11d645.png" src="../../_images/fa2b2bf588dbf3e91ebe931138a81a1cb1814913eb9d0c6ca1d45ffcce11d645.png" />
-<img alt="../../_images/fbdc388ebcd4b0b8b7e4f4e0401064f7330defe0e0f9af9e6350077e26abf3dd.png" src="../../_images/fbdc388ebcd4b0b8b7e4f4e0401064f7330defe0e0f9af9e6350077e26abf3dd.png" />
+<img alt="../../_images/3b1cca2c5f30065a4f1678096fbed4f35362a24181156ea04e56ac34756e321a.png" src="../../_images/3b1cca2c5f30065a4f1678096fbed4f35362a24181156ea04e56ac34756e321a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -835,11 +835,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x171efb8a300&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x20cef928cb0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/6fd4d8149ba6580a6118eff642c70606f661054328a9a9c83b6a74fdc2a2290b.png" src="../../_images/6fd4d8149ba6580a6118eff642c70606f661054328a9a9c83b6a74fdc2a2290b.png" />
-<img alt="../../_images/61d771c94aab8c8fdb26389adef88c44faf8ce461b17f512184e4b6583a2d1d7.png" src="../../_images/61d771c94aab8c8fdb26389adef88c44faf8ce461b17f512184e4b6583a2d1d7.png" />
+<img alt="../../_images/1ead07443489a8163434fe430d5712d9a88bd3cf4c27eeaa7f2d08d114ced438.png" src="../../_images/1ead07443489a8163434fe430d5712d9a88bd3cf4c27eeaa7f2d08d114ced438.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -851,14 +851,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Program Files\Python312\Lib\site-packages\molass\PlotUtils\LowRankInfoPlot.py:137: RuntimeWarning: invalid value encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developper memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+C:\Program Files\Python312\Lib\site-packages\molass\PlotUtils\LowRankInfoPlot.py:133: RuntimeWarning: invalid value encountered in log
   logy = np.log(pv[slice_])
 </pre></div>
 </div>
-<img alt="../../_images/d2d40c87a9acffc0dcffb76f9e3124f010643b16c985c0643c3ed43fe8cfbffb.png" src="../../_images/d2d40c87a9acffc0dcffb76f9e3124f010643b16c985c0643c3ed43fe8cfbffb.png" />
+<img alt="../../_images/72e2aa74930f3f3798105d79ee73ef0bc41e26189ddb85ce324c70084f422d62.png" src="../../_images/72e2aa74930f3f3798105d79ee73ef0bc41e26189ddb85ce324c70084f422d62.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -929,7 +927,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>About Example Data Sets</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>About Example Data Sets</p>
       </div>
     </a>
     <a class="right-next"
@@ -937,7 +935,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.2. </span>Generation</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>Generation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

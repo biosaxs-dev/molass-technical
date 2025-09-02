@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -187,16 +187,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_survey.html">7. Data Survey</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">8. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">8.1. Trimming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">8.2. Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">8.3. Local Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_survey.html">8. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">9. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">9.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">9.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">9.3. Local Settings</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">9. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">9.1. Simple Animation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">9.2. SEC Simulation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">10. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">10.1. Simple Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">10.2. SEC Simulation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -461,93 +462,119 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4] h_ratio= 0.02911284350190842
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10919: RuntimeWarning: invalid value encountered in scalar divide
-  slope = ssxym / ssxm
-C:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10933: RuntimeWarning: invalid value encountered in sqrt
-  t = r * np.sqrt(df / ((1.0 - r + TINY)*(1.0 + r + TINY)))
-C:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10936: RuntimeWarning: invalid value encountered in scalar divide
-  slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2] D:\PyTools\Data\20161006\OA01\Backsub
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5] h_ratio= 0.029232230413578555
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3] D:\PyTools\Data\20161104\BL-10C\Ald
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4] D:\PyTools\Data\20161104\BL-10C\OA
-</pre></div>
-</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">22</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="nb">print</span><span class="p">([</span><span class="n">k</span><span class="p">],</span> <span class="n">path</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">remove_bubbles</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">if</span> <span class="n">ssd</span><span class="o">.</span><span class="n">uv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No UV data found in </span><span class="si">%s</span><span class="s2">, skipping.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File C:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:1031,</span> in <span class="ni">_validate_bounds</span><span class="nt">(bounds, x0, meth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1030</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1031</span>     <span class="n">bounds</span><span class="o">.</span><span class="n">lb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">lb</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">bounds</span><span class="o">.</span><span class="n">ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">ub</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataObjects\SecSaxsData.py:71,</span> in <span class="ni">SecSaxsData.__init__</span><span class="nt">(self, folder, object_list, uv_only, xr_only, trimmed, remove_bubbles, beamline_info, mapping, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Folder </span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="kn">from</span> <span class="nn">molass.DataUtils.XrLoader</span> <span class="kn">import</span> <span class="n">load_xr_with_options</span>
-<span class="ne">---&gt; </span><span class="mi">71</span> <span class="n">xr_array</span> <span class="o">=</span> <span class="n">load_xr_with_options</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">remove_bubbles</span><span class="o">=</span><span class="n">remove_bubbles</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">xrM</span> <span class="o">=</span> <span class="n">xr_array</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="n">xrE</span> <span class="o">=</span> <span class="n">xr_array</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-
-<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataUtils\XrLoader.py:61,</span> in <span class="ni">load_xr_with_options</span><span class="nt">(folder_path, remove_bubbles, logger, debug)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">def</span> <span class="nf">load_xr_with_options</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">remove_bubbles</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">xr_array</span> <span class="o">=</span> <span class="n">load_xr</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">if</span> <span class="n">remove_bubbles</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="n">xr_remove_bubbles</span><span class="p">(</span><span class="n">xr_array</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="n">debug</span><span class="p">)</span>
-
-<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataUtils\XrLoader.py:25,</span> in <span class="ni">load_xr</span><span class="nt">(folder_path)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">input_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">folder_path</span> <span class="o">+</span> <span class="s2">&quot;/*.dat&quot;</span><span class="p">)):</span>
-<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">input_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">xr_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="k">return</span> <span class="n">xr_array</span>
-
-<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\npyio.py:1373,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1370</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1371</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1373</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span>             <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1375</span>             <span class="n">unpack</span><span class="o">=</span><span class="n">unpack</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1376</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="k">return</span> <span class="n">arr</span>
-
-<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\npyio.py:992,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
-<span class="g g-Whitespace">    </span><span class="mi">990</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">992</span>     <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span>     <span class="k">if</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">994</span>         <span class="n">encoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-
-<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\_datasource.py:193,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd"> </span>
+<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\stride_tricks.py:413,</span> in <span class="ni">broadcast_to</span><span class="nt">(array, shape, subok)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Broadcast an array to a new shape.</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span><span class="sd"> Parameters</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">193</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span><span class="sd">        [1, 2, 3]])</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">413</span> <span class="k">return</span> <span class="n">_broadcast_to</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">subok</span><span class="o">=</span><span class="n">subok</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\_datasource.py:530,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span>     <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s1">&#39;bz2&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>         <span class="n">mode</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">530</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
+<span class="nn">File C:\Program Files\Python312\Lib\site-packages\numpy\lib\stride_tricks.py:349,</span> in <span class="ni">_broadcast_to</span><span class="nt">(array, shape, subok, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span> <span class="n">extras</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">349</span> <span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nditer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>     <span class="p">(</span><span class="n">array</span><span class="p">,),</span> <span class="n">flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;multi_index&#39;</span><span class="p">,</span> <span class="s1">&#39;refs_ok&#39;</span><span class="p">,</span> <span class="s1">&#39;zerosize_ok&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">extras</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>     <span class="n">op_flags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;readonly&#39;</span><span class="p">],</span> <span class="n">itershape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span> <span class="k">with</span> <span class="n">it</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>     <span class="c1"># never really has writebackifcopy semantics</span>
 
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">ValueError</span>: operands could not be broadcast together with remapped shapes [original-&gt;remapped]: (20,)  and requested shape (16,)
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">28</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Compact Plot for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">path</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">ssd</span><span class="o">.</span><span class="n">set_baseline_method</span><span class="p">(</span><span class="s1">&#39;integral&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">28</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">plot_compact</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="n">result</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">&quot;plot_</span><span class="si">%03d</span><span class="s2">.png&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">result</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataObjects\SecSaxsData.py:172,</span> in <span class="ni">SecSaxsData.plot_compact</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>     <span class="n">reload</span><span class="p">(</span><span class="n">molass</span><span class="o">.</span><span class="n">PlotUtils</span><span class="o">.</span><span class="n">SecSaxsDataPlot</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="kn">from</span> <span class="nn">molass.PlotUtils.SecSaxsDataPlot</span> <span class="kn">import</span> <span class="n">plot_compact_impl</span>
+<span class="ne">--&gt; </span><span class="mi">172</span> <span class="k">return</span> <span class="n">plot_compact_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\PlotUtils\SecSaxsDataPlot.py:123,</span> in <span class="ni">plot_compact_impl</span><span class="nt">(ssd, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="n">ratio_curve</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;ratio_curve&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">moment_lines</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;moment_lines&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">123</span> <span class="n">trim</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">make_trimming</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="n">mapping</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">get_mapping</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="n">xr_curve</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">xr_curve</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataObjects\SecSaxsData.py:207,</span> in <span class="ni">SecSaxsData.make_trimming</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> <span class="kn">from</span> <span class="nn">molass.Trimming.TrimmingUtils</span> <span class="kn">import</span> <span class="n">make_trimming_impl</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="n">flowchange</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trimmed</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">207</span> <span class="k">return</span> <span class="n">make_trimming_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flowchange</span><span class="o">=</span><span class="n">flowchange</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\Trimming\TrimmingUtils.py:72,</span> in <span class="ni">make_trimming_impl</span><span class="nt">(ssd, xr_qr, xr_mt, uv_wr, uv_mt, uv_fc, flowchange, ip_effect_info, nsigmas, nguiniers, jranges, mapping, debug)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="n">uv_icurve</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">uv</span><span class="o">.</span><span class="n">get_icurve</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="n">uv_mt</span> <span class="o">=</span> <span class="n">EghMoment</span><span class="p">(</span><span class="n">uv_icurve</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">72</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">uv_mt</span><span class="o">.</span><span class="n">get_nsigma_points</span><span class="p">(</span><span class="n">nsigmas</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">if</span> <span class="n">flowchange</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="n">flowchange</span> <span class="o">=</span> <span class="n">get_molass_options</span><span class="p">(</span><span class="s1">&#39;flowchange&#39;</span><span class="p">)</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\Moment.py:47,</span> in <span class="ni">Moment.get_nsigma_points</span><span class="nt">(self, n)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">def</span> <span class="nf">get_nsigma_points</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="n">M</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_meanstd</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="n">wanted_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">std</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">M</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span><span class="n">std</span><span class="p">)</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\Moment.py:38,</span> in <span class="ni">Moment.get_meanstd</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="k">def</span> <span class="nf">get_meanstd</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>         <span class="n">y_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_y_</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>         <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">std</span> <span class="o">=</span> <span class="n">compute_meanstd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y_</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">std</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\EghMoment.py:18,</span> in <span class="ni">EghMoment.get_y_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">def</span> <span class="nf">get_y_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">18</span>         <span class="bp">self</span><span class="o">.</span><span class="n">y_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_egh_y</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\EghMoment.py:25,</span> in <span class="ni">EghMoment.compute_egh_y</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_peaks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="bp">self</span><span class="o">.</span><span class="n">num_peaks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">icurve</span><span class="o">.</span><span class="n">get_peaks</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">25</span> <span class="bp">self</span><span class="o">.</span><span class="n">curves</span> <span class="o">=</span> <span class="n">decompose_icurve_impl</span><span class="p">(</span><span class="n">icurve</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_peaks</span><span class="p">)</span>   <span class="c1"># egh component</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">cy_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="k">for</span> <span class="n">curve</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">curves</span><span class="p">:</span>
+
+<span class="nn">File D:\Github\molass-technical\chapters\70\../../../molass-library\molass\LowRank\CurveDecomposer.py:194,</span> in <span class="ni">decompose_icurve_impl</span><span class="nt">(icurve, num_components, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">basinhopping</span><span class="p">(</span><span class="n">fit_objective</span><span class="p">,</span> <span class="n">init_params</span><span class="p">,</span> <span class="n">minimizer_kwargs</span><span class="o">=</span><span class="n">minimizer_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">194</span>         <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">fit_objective</span><span class="p">,</span> <span class="n">init_params</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="n">opt_params</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File C:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:664,</span> in <span class="ni">minimize</span><span class="nt">(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span> <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="c1"># convert to new-style bounds so we only have to consider one case</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">bounds</span> <span class="o">=</span> <span class="n">standardize_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">664</span>     <span class="n">bounds</span> <span class="o">=</span> <span class="n">_validate_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">meth</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="k">if</span> <span class="n">meth</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;tnc&quot;</span><span class="p">,</span> <span class="s2">&quot;slsqp&quot;</span><span class="p">,</span> <span class="s2">&quot;l-bfgs-b&quot;</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span>         <span class="c1"># These methods can&#39;t take the finite-difference derivatives they</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="c1"># need when a variable is fixed by the bounds. To avoid this issue,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span> 
+<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="c1"># determine whether any variables are fixed</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="n">i_fixed</span> <span class="o">=</span> <span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">lb</span> <span class="o">==</span> <span class="n">bounds</span><span class="o">.</span><span class="n">ub</span><span class="p">)</span>
+
+<span class="nn">File C:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:1034,</span> in <span class="ni">_validate_bounds</span><span class="nt">(bounds, x0, meth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1032</span>     <span class="n">bounds</span><span class="o">.</span><span class="n">ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">bounds</span><span class="o">.</span><span class="n">ub</span><span class="p">,</span> <span class="n">x0</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1033</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1034</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">1036</span> <span class="k">return</span> <span class="n">bounds</span>
+
+<span class="ne">ValueError</span>: The number of bounds is not compatible with the length of `x0`.
 </pre></div>
 </div>
 </div>

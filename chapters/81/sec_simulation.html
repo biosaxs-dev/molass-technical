@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.2. SEC Simulation &#8212; Molass Technical Report</title>
+    <title>10.2. SEC Simulation &#8212; Molass Technical Report</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="9.1. Simple Animation" href="simple_animation.html" />
+    <link rel="prev" title="10.1. Simple Animation" href="simple_animation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,16 +186,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">7. Data Survey</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">8. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">8.1. Trimming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">8.2. Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">8.3. Local Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">8. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">9. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">9.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">9.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">9.3. Local Settings</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="animation.html">9. Animation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="simple_animation.html">9.1. Simple Animation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.2. SEC Simulation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="animation.html">10. Animation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="simple_animation.html">10.1. Simple Animation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.2. SEC Simulation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -396,13 +397,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sec-simulation">
-<h1><span class="section-number">9.2. </span>SEC Simulation<a class="headerlink" href="#sec-simulation" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10.2. </span>SEC Simulation<a class="headerlink" href="#sec-simulation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;D:\GitHub\molass-library&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
-<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.0.6&#39;</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.4.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.4.0 or higher.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -410,7 +411,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass.SEC.ColumnSimulation</span> <span class="kn">import</span> <span class="n">get_animation</span>
-<span class="n">anim</span> <span class="o">=</span> <span class="n">get_animation</span><span class="p">(</span><span class="n">num_frames</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">return_init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">get_animation</span><span class="p">(</span><span class="n">num_frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">return_init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,7 +419,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>radius_map= [0.008 0.003 0.001]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/400 [00:00&lt;?, ?it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/100 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
 </div>
@@ -441,11 +442,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▏         | 9/400 [00:21&lt;14:40,  2.25s/it]D:\GitHub\molass-library\molass\SEC\StationaryMove.py:73: RuntimeWarning: divide by zero encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 6/100 [00:09&lt;02:25,  1.55s/it]D:\GitHub\molass-library\molass\SEC\StationaryMove.py:73: RuntimeWarning: divide by zero encountered in scalar divide
   m = (py - cy)/(px - cx)
 D:\GitHub\molass-library\molass\SEC\StationaryMove.py:51: RuntimeWarning: invalid value encountered in scalar add
   temp = -2 * (a * x1 + b * y1 + c) /(a * a + b * b)
-100%|█████████▉| 399/400 [15:05&lt;00:02,  2.22s/it]
+ 99%|█████████▉| 99/100 [02:27&lt;00:01,  1.45s/it]
 </pre></div>
 </div>
 </div>
@@ -488,7 +489,7 @@ D:\GitHub\molass-library\molass\SEC\StationaryMove.py:51: RuntimeWarning: invali
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.1. </span>Simple Animation</p>
+        <p class="prev-next-title"><span class="section-number">10.1. </span>Simple Animation</p>
       </div>
     </a>
 </div>

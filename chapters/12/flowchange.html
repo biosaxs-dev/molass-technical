@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -187,16 +187,17 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">7. Data Survey</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">8. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">8.1. Trimming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">8.2. Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">8.3. Local Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">8. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">9. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">9.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">9.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">9.3. Local Settings</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">9. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">9.1. Simple Animation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">9.2. SEC Simulation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">10. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../81/simple_animation.html">10.1. Simple Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../81/sec_simulation.html">10.2. SEC Simulation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -416,13 +417,13 @@ document.write(`
 <span class="n">ORIGINAL_DATA</span> <span class="o">=</span> <span class="n">local_settings</span><span class="p">[</span><span class="s1">&#39;ORIGINAL_DATA&#39;</span><span class="p">]</span>
 <span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">ORIGINAL_DATA</span><span class="p">)</span>
 <span class="n">ssd</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">();</span>
-<span class="n">tinfo</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">make_trimming_info</span><span class="p">()</span>
-<span class="n">ssd</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">(</span><span class="n">tinfo</span><span class="p">)</span>
+<span class="n">tinfo</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">make_trimming</span><span class="p">()</span>
+<span class="n">ssd</span><span class="o">.</span><span class="n">plot_trimming</span><span class="p">(</span><span class="n">tinfo</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x22fd3b11160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x28b5ba1ac60&gt;
 </pre></div>
 </div>
 <img alt="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" src="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" />

@@ -1,17 +1,4 @@
 Traceback (most recent call last):
-  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 198, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\jupyter_client\channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "C:\Program Files\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
   File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
@@ -25,20 +12,168 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['import sys', "sys.path.insert(0, '../../../molass-library')", "sys.path.insert(0, '../../../molass-legacy')", 'import os', 'import matplotlib.pyplot as plt']
-...
-['    result.savefig(os.path.join(output_folder, "plot_%03d.png" % k))', '    result.close()', '    if k > 3:', '        pass', '        # break']
--------------------
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Program Files\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import sys
+sys.path.insert(0, '../../../molass-library')
+sys.path.insert(0, '../../../molass-legacy')
+import os
+import matplotlib.pyplot as plt
+from molass.Local import get_local_settings
+from molass.DataUtils.FolderWalker import walk_folders
+from molass.Global.Options import set_molass_options
+set_molass_options(flowchange='auto')
+local_settings = get_local_settings()
+DATA_ROOT_FOLDER = local_settings['DATA_ROOT_FOLDER']
+from molass.DataObjects import SecSaxsData as SSD
+
+output_folder = "figs"
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+
+for k, path in enumerate(walk_folders(DATA_ROOT_FOLDER)):
+    if k < 0:
+        continue
+    print([k], path)
+    ssd = SSD(path, remove_bubbles=True)
+    if ssd.uv is None:
+        print("No UV data found in %s, skipping." % path)
+        continue
+    title = "Compact Plot for %s" % path
+    ssd.set_baseline_method('integral')
+    result = ssd.plot_compact(title=title, baseline=True)
+    result.savefig(os.path.join(output_folder, "plot_%03d.png" % k))
+    result.close()
+    if k > 3:
+        pass
+        # break
+------------------
+
+----- stdout -----
+[0] D:\PyTools\Data\20160227\backsub
+----- stderr -----
+zeros at the angular ends of error data have been replaced with the adjacent values.
+----- stdout -----
+[1] D:\PyTools\Data\20160628
+----- stdout -----
+[4] h_ratio= 0.02911284350190842
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+File [1;32mC:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:1031[0m, in [0;36m_validate_bounds[1;34m(bounds, x0, meth)[0m
+[0;32m   1030[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 1031[0m     bounds[38;5;241m.[39mlb [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mbroadcast_to[49m[43m([49m[43mbounds[49m[38;5;241;43m.[39;49m[43mlb[49m[43m,[49m[43m [49m[43mx0[49m[38;5;241;43m.[39;49m[43mshape[49m[43m)[49m
+[0;32m   1032[0m     bounds[38;5;241m.[39mub [38;5;241m=[39m np[38;5;241m.[39mbroadcast_to(bounds[38;5;241m.[39mub, x0[38;5;241m.[39mshape)
+
+File [1;32mC:\Program Files\Python312\Lib\site-packages\numpy\lib\stride_tricks.py:413[0m, in [0;36mbroadcast_to[1;34m(array, shape, subok)[0m
+[0;32m    369[0m [38;5;250m[39m[38;5;124;03m"""Broadcast an array to a new shape.[39;00m
+[0;32m    370[0m 
+[0;32m    371[0m [38;5;124;03mParameters[39;00m
+[1;32m   (...)[0m
+[0;32m    411[0m [38;5;124;03m       [1, 2, 3]])[39;00m
+[0;32m    412[0m [38;5;124;03m"""[39;00m
+[1;32m--> 413[0m [38;5;28;01mreturn[39;00m [43m_broadcast_to[49m[43m([49m[43marray[49m[43m,[49m[43m [49m[43mshape[49m[43m,[49m[43m [49m[43msubok[49m[38;5;241;43m=[39;49m[43msubok[49m[43m,[49m[43m [49m[43mreadonly[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+
+File [1;32mC:\Program Files\Python312\Lib\site-packages\numpy\lib\stride_tricks.py:349[0m, in [0;36m_broadcast_to[1;34m(array, shape, subok, readonly)[0m
+[0;32m    348[0m extras [38;5;241m=[39m []
+[1;32m--> 349[0m it [38;5;241m=[39m [43mnp[49m[38;5;241;43m.[39;49m[43mnditer[49m[43m([49m
+[0;32m    350[0m [43m    [49m[43m([49m[43marray[49m[43m,[49m[43m)[49m[43m,[49m[43m [49m[43mflags[49m[38;5;241;43m=[39;49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mmulti_index[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mrefs_ok[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mzerosize_ok[39;49m[38;5;124;43m'[39;49m[43m][49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[43mextras[49m[43m,[49m
+[0;32m    351[0m [43m    [49m[43mop_flags[49m[38;5;241;43m=[39;49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mreadonly[39;49m[38;5;124;43m'[39;49m[43m][49m[43m,[49m[43m [49m[43mitershape[49m[38;5;241;43m=[39;49m[43mshape[49m[43m,[49m[43m [49m[43morder[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mC[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[0;32m    352[0m [38;5;28;01mwith[39;00m it:
+[0;32m    353[0m     [38;5;66;03m# never really has writebackifcopy semantics[39;00m
+
+[1;31mValueError[0m: operands could not be broadcast together with remapped shapes [original->remapped]: (20,)  and requested shape (16,)
+
+The above exception was the direct cause of the following exception:
+
+[1;31mValueError[0m                                Traceback (most recent call last)
+Cell [1;32mIn[1], line 28[0m
+[0;32m     26[0m title [38;5;241m=[39m [38;5;124m"[39m[38;5;124mCompact Plot for [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m path
+[0;32m     27[0m ssd[38;5;241m.[39mset_baseline_method([38;5;124m'[39m[38;5;124mintegral[39m[38;5;124m'[39m)
+[1;32m---> 28[0m result [38;5;241m=[39m [43mssd[49m[38;5;241;43m.[39;49m[43mplot_compact[49m[43m([49m[43mtitle[49m[38;5;241;43m=[39;49m[43mtitle[49m[43m,[49m[43m [49m[43mbaseline[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[0;32m     29[0m result[38;5;241m.[39msavefig(os[38;5;241m.[39mpath[38;5;241m.[39mjoin(output_folder, [38;5;124m"[39m[38;5;124mplot_[39m[38;5;132;01m%03d[39;00m[38;5;124m.png[39m[38;5;124m"[39m [38;5;241m%[39m k))
+[0;32m     30[0m result[38;5;241m.[39mclose()
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataObjects\SecSaxsData.py:172[0m, in [0;36mSecSaxsData.plot_compact[1;34m(self, **kwargs)[0m
+[0;32m    170[0m     reload(molass[38;5;241m.[39mPlotUtils[38;5;241m.[39mSecSaxsDataPlot)
+[0;32m    171[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmolass[39;00m[38;5;21;01m.[39;00m[38;5;21;01mPlotUtils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mSecSaxsDataPlot[39;00m [38;5;28;01mimport[39;00m plot_compact_impl
+[1;32m--> 172[0m [38;5;28;01mreturn[39;00m [43mplot_compact_impl[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\PlotUtils\SecSaxsDataPlot.py:123[0m, in [0;36mplot_compact_impl[1;34m(ssd, **kwargs)[0m
+[0;32m    120[0m ratio_curve [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mratio_curve[39m[38;5;124m'[39m, [38;5;28;01mFalse[39;00m)
+[0;32m    121[0m moment_lines [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mmoment_lines[39m[38;5;124m'[39m, [38;5;28;01mFalse[39;00m)
+[1;32m--> 123[0m trim [38;5;241m=[39m [43mssd[49m[38;5;241;43m.[39;49m[43mmake_trimming[49m[43m([49m[43m)[49m
+[0;32m    124[0m mapping [38;5;241m=[39m ssd[38;5;241m.[39mget_mapping()
+[0;32m    125[0m xr_curve [38;5;241m=[39m mapping[38;5;241m.[39mxr_curve
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\DataObjects\SecSaxsData.py:207[0m, in [0;36mSecSaxsData.make_trimming[1;34m(self, **kwargs)[0m
+[0;32m    205[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmolass[39;00m[38;5;21;01m.[39;00m[38;5;21;01mTrimming[39;00m[38;5;21;01m.[39;00m[38;5;21;01mTrimmingUtils[39;00m [38;5;28;01mimport[39;00m make_trimming_impl
+[0;32m    206[0m flowchange [38;5;241m=[39m [38;5;28;01mFalse[39;00m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mtrimmed [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[1;32m--> 207[0m [38;5;28;01mreturn[39;00m [43mmake_trimming_impl[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mflowchange[49m[38;5;241;43m=[39;49m[43mflowchange[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\Trimming\TrimmingUtils.py:72[0m, in [0;36mmake_trimming_impl[1;34m(ssd, xr_qr, xr_mt, uv_wr, uv_mt, uv_fc, flowchange, ip_effect_info, nsigmas, nguiniers, jranges, mapping, debug)[0m
+[0;32m     70[0m     uv_icurve [38;5;241m=[39m ssd[38;5;241m.[39muv[38;5;241m.[39mget_icurve()
+[0;32m     71[0m     uv_mt [38;5;241m=[39m EghMoment(uv_icurve)
+[1;32m---> 72[0m start, stop [38;5;241m=[39m [43muv_mt[49m[38;5;241;43m.[39;49m[43mget_nsigma_points[49m[43m([49m[43mnsigmas[49m[43m)[49m
+[0;32m     74[0m [38;5;28;01mif[39;00m flowchange [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m     75[0m     flowchange [38;5;241m=[39m get_molass_options([38;5;124m'[39m[38;5;124mflowchange[39m[38;5;124m'[39m)
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\Moment.py:47[0m, in [0;36mMoment.get_nsigma_points[1;34m(self, n)[0m
+[0;32m     46[0m [38;5;28;01mdef[39;00m [38;5;21mget_nsigma_points[39m([38;5;28mself[39m, n):
+[1;32m---> 47[0m     M, std [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_meanstd[49m[43m([49m[43m)[49m
+[0;32m     48[0m     [38;5;28;01mtry[39;00m:
+[0;32m     49[0m         wanted_range [38;5;241m=[39m np[38;5;241m.[39mlogical_and(M [38;5;241m-[39m n[38;5;241m*[39mstd [38;5;241m<[39m [38;5;28mself[39m[38;5;241m.[39mx, [38;5;28mself[39m[38;5;241m.[39mx [38;5;241m<[39m M [38;5;241m+[39m n[38;5;241m*[39mstd)
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\Moment.py:38[0m, in [0;36mMoment.get_meanstd[1;34m(self)[0m
+[0;32m     36[0m [38;5;28;01mdef[39;00m [38;5;21mget_meanstd[39m([38;5;28mself[39m):
+[0;32m     37[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39my_ [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m---> 38[0m         y_ [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mget_y_[49m[43m([49m[43m)[49m
+[0;32m     39[0m         [38;5;28mself[39m[38;5;241m.[39mM, [38;5;28mself[39m[38;5;241m.[39mstd [38;5;241m=[39m compute_meanstd([38;5;28mself[39m[38;5;241m.[39mx, y_)
+[0;32m     40[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mM, [38;5;28mself[39m[38;5;241m.[39mstd
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\EghMoment.py:18[0m, in [0;36mEghMoment.get_y_[1;34m(self)[0m
+[0;32m     16[0m [38;5;28;01mdef[39;00m [38;5;21mget_y_[39m([38;5;28mself[39m):
+[0;32m     17[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39my_ [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m---> 18[0m         [38;5;28mself[39m[38;5;241m.[39my_ [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcompute_egh_y[49m[43m([49m[43m)[49m
+[0;32m     19[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39my_
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\Stats\EghMoment.py:25[0m, in [0;36mEghMoment.compute_egh_y[1;34m(self)[0m
+[0;32m     23[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mnum_peaks [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m     24[0m     [38;5;28mself[39m[38;5;241m.[39mnum_peaks [38;5;241m=[39m [38;5;28mlen[39m(icurve[38;5;241m.[39mget_peaks())
+[1;32m---> 25[0m [38;5;28mself[39m[38;5;241m.[39mcurves [38;5;241m=[39m [43mdecompose_icurve_impl[49m[43m([49m[43micurve[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mnum_peaks[49m[43m)[49m   [38;5;66;03m# egh component[39;00m
+[0;32m     26[0m cy_list [38;5;241m=[39m []
+[0;32m     27[0m [38;5;28;01mfor[39;00m curve [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mcurves:
+
+File [1;32mD:\Github\molass-technical\chapters\70\../../../molass-library\molass\LowRank\CurveDecomposer.py:194[0m, in [0;36mdecompose_icurve_impl[1;34m(icurve, num_components, **kwargs)[0m
+[0;32m    192[0m         res [38;5;241m=[39m basinhopping(fit_objective, init_params, minimizer_kwargs[38;5;241m=[39mminimizer_kwargs)
+[0;32m    193[0m     [38;5;28;01melse[39;00m:
+[1;32m--> 194[0m         res [38;5;241m=[39m [43mminimize[49m[43m([49m[43mfit_objective[49m[43m,[49m[43m [49m[43minit_params[49m[43m,[49m[43m [49m[43mmethod[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mNelder-Mead[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mbounds[49m[38;5;241;43m=[39;49m[43mbounds[49m[43m)[49m
+[0;32m    195[0m     opt_params [38;5;241m=[39m res[38;5;241m.[39mx[38;5;241m.[39mreshape(shape)
+[0;32m    196[0m [38;5;28;01melse[39;00m:
+
+File [1;32mC:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:664[0m, in [0;36mminimize[1;34m(fun, x0, args, method, jac, hess, hessp, bounds, constraints, tol, callback, options)[0m
+[0;32m    661[0m [38;5;28;01mif[39;00m bounds [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m    662[0m     [38;5;66;03m# convert to new-style bounds so we only have to consider one case[39;00m
+[0;32m    663[0m     bounds [38;5;241m=[39m standardize_bounds(bounds, x0, [38;5;124m'[39m[38;5;124mnew[39m[38;5;124m'[39m)
+[1;32m--> 664[0m     bounds [38;5;241m=[39m [43m_validate_bounds[49m[43m([49m[43mbounds[49m[43m,[49m[43m [49m[43mx0[49m[43m,[49m[43m [49m[43mmeth[49m[43m)[49m
+[0;32m    666[0m     [38;5;28;01mif[39;00m meth [38;5;129;01min[39;00m {[38;5;124m"[39m[38;5;124mtnc[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mslsqp[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124ml-bfgs-b[39m[38;5;124m"[39m}:
+[0;32m    667[0m         [38;5;66;03m# These methods can't take the finite-difference derivatives they[39;00m
+[0;32m    668[0m         [38;5;66;03m# need when a variable is fixed by the bounds. To avoid this issue,[39;00m
+[1;32m   (...)[0m
+[0;32m    673[0m 
+[0;32m    674[0m         [38;5;66;03m# determine whether any variables are fixed[39;00m
+[0;32m    675[0m         i_fixed [38;5;241m=[39m (bounds[38;5;241m.[39mlb [38;5;241m==[39m bounds[38;5;241m.[39mub)
+
+File [1;32mC:\Program Files\Python312\Lib\site-packages\scipy\optimize\_minimize.py:1034[0m, in [0;36m_validate_bounds[1;34m(bounds, x0, meth)[0m
+[0;32m   1032[0m     bounds[38;5;241m.[39mub [38;5;241m=[39m np[38;5;241m.[39mbroadcast_to(bounds[38;5;241m.[39mub, x0[38;5;241m.[39mshape)
+[0;32m   1033[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m e:
+[1;32m-> 1034[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(msg) [38;5;28;01mfrom[39;00m [38;5;21;01me[39;00m
+[0;32m   1036[0m [38;5;28;01mreturn[39;00m bounds
+
+[1;31mValueError[0m: The number of bounds is not compatible with the length of `x0`.
 

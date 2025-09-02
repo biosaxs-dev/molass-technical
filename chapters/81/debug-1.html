@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Molass Technical Report</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/81/debug-1';</script>
+    <link rel="icon" href="../../_static/molamola.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/molamola.png" class="logo__image only-light" alt="Molass Technical Report - Home"/>
+    <script>document.write(`<img src="../../_static/molamola.png" class="logo__image only-dark" alt="Molass Technical Report - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Molass Technical Report
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/customization.html">1. Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10/elution_range.html">2. Elution Range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/spectral_range.html">3. Spectral Range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">8. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">9. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">9.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">9.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">9.3. Local Settings</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="animation.html">10. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="simple_animation.html">10.1. Simple Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec_simulation.html">10.2. SEC Simulation</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/freesemt/molass-technical" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/81/debug-1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/81/debug-1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass_legacy.KekLib.NumpyArrayUtils</span> <span class="kn">import</span> <span class="n">from_space_separated_list_string</span>
+
+<span class="n">pyv_large_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"> [0.79266476 0.72512741 0.75770125 0.74589342 0.71605963 0.70017296</span>
+<span class="s2"> 0.69334855 0.74703596 0.65792272 0.647168   0.72540885 0.74261109</span>
+<span class="s2"> 0.50620217 0.72738263 0.71034887 0.71203096 0.71754102 0.74421745</span>
+<span class="s2"> 0.72343766 0.7433972  0.53047738 0.74730938 0.66597011 0.74039932</span>
+<span class="s2"> 0.82024847 0.7413012  0.74222689 0.80111206 0.72656555 0.7290188</span>
+<span class="s2"> 0.66643949 0.74506248 0.73535166 0.81865412 0.73665932 0.72317049</span>
+<span class="s2"> 0.79296566 0.78059468 0.81502465 0.73730433 0.82078236 0.82206396</span>
+<span class="s2"> 0.75279038 0.81495854 0.82693678 0.75104129 0.82313803 0.81975847</span>
+<span class="s2"> 0.73864859 0.90069661 0.72384653 0.7456472  0.74018311 0.72777296</span>
+<span class="s2"> 0.73876595 0.74453746 0.74312851 0.73946317 0.74653767 0.68233929</span>
+<span class="s2"> 0.72627779 0.739423   0.82345582 0.73025211 0.75556541 0.82403634</span>
+<span class="s2"> 0.76305639 0.80184746 0.78476215 0.74224229 0.8128701  0.82134161</span>
+<span class="s2"> 0.74128956 0.68120847 0.73768228 0.73859693 0.72708305 0.6735519</span>
+<span class="s2"> 0.67467689 0.74238876 0.73946243 0.78938656 0.7372054  0.66585517</span>
+<span class="s2"> 0.79815335 0.82612482 0.71650907 0.66081252 0.73664773 0.70318903</span>
+<span class="s2"> 0.74348601 0.74599391 0.73825187 0.76137169 0.74942208 0.69374546</span>
+<span class="s2"> 0.71124031 0.72894298 0.66454103 0.65947286 0.7397834  0.66471957</span>
+<span class="s2"> 0.7470059  0.6875372  0.69302998 0.72233425 0.73605803 0.7435696</span>
+<span class="s2"> 0.74143758 0.67886141 0.6627519  0.73464525 0.74413187 0.74406071</span>
+<span class="s2"> 0.74519924 0.74370673 0.67319197 0.74264853 0.66374194 0.81565984</span>
+<span class="s2"> 0.71961536 0.75306151 0.73989515 0.74306231 0.77246791 0.7601714</span>
+<span class="s2"> 0.73880937 0.74150941 0.72215994 0.71801496 0.8168061  0.74155121</span>
+<span class="s2"> 0.74498165 0.70539818 0.67054027 0.74609522 0.72595371 0.74550781</span>
+<span class="s2"> 0.74786944 0.74990366 0.72919926 0.73281807 0.69842756 0.73679197</span>
+<span class="s2"> 0.6584514  0.7258254  0.67307639 0.74881927 0.6666285  0.66069712</span>
+<span class="s2"> 0.67313246 0.76942902 0.73439786 0.72433121 0.64650378 0.67262981</span>
+<span class="s2"> 0.74044789 0.76660097 0.72675456 0.80613915 0.73207149 0.73940463</span>
+<span class="s2"> 0.74712921 0.66630264 0.70633669 0.75063488 0.74114265 0.73766708</span>
+<span class="s2"> 0.66522801 0.72595894 0.74780995 0.73986191 0.7285815  0.74071044</span>
+<span class="s2"> 0.73547049 0.73952944 0.73785566 0.74743714 0.66220645 0.70537104</span>
+<span class="s2"> 0.69692844 0.74337418 0.74158947 0.73541522 0.74694199 0.74470062</span>
+<span class="s2"> 0.68473644 0.74314018 0.74629306 0.74695446 0.74062571 0.71889012</span>
+<span class="s2"> 0.74784703 0.81726048 0.6988624  0.81919572 0.71261578 0.7082859</span>
+<span class="s2"> 0.82373968 0.74481632 0.78974083 0.81280969 0.74014151 0.81846135</span>
+<span class="s2"> 0.79767023 0.81803314 0.81904913 0.82028912 0.824006   0.74083919</span>
+<span class="s2"> 0.75292197 0.80643802 0.74736437 0.78531394 0.82019723 0.81683161</span>
+<span class="s2"> 0.7463695  0.7420429  0.7456357  0.74945907 0.70877264 0.73806771</span>
+<span class="s2"> 0.73424773 0.74203003 0.67709144 0.73053085 0.72218881 0.73167361</span>
+<span class="s2"> 0.74217659 0.74802448 0.77345485 0.74210006 0.73915598 0.73961839</span>
+<span class="s2"> 0.69547834 0.7301866  0.65911285 0.74137547 0.74913588 0.74745547</span>
+<span class="s2"> 0.74376965 0.73712374 0.72839676 0.66041443 0.77410949 0.79005277</span>
+<span class="s2"> 0.66807113 0.73512589 0.71124809 0.74016733 0.74417247 0.74489692</span>
+<span class="s2"> 0.6712282  0.74026326 0.66857821 0.74952711 0.70437486 0.72949907</span>
+<span class="s2"> 0.74205197 0.71020374 0.72756572 0.72671442 0.66865362 0.6812844</span>
+<span class="s2"> 0.72556488 0.72491696 0.6850356  0.74615557 0.73800663 0.7400123</span>
+<span class="s2"> 0.71012495 0.6669754  0.82889006 0.73990373 0.73699592 0.73095691</span>
+<span class="s2"> 0.77686184 0.71429481 0.75093801 0.74715722 0.68756304 0.74391536</span>
+<span class="s2"> 0.74111924 0.68271277 0.66576857 0.74360163 0.71901628 0.798497</span>
+<span class="s2"> 0.74730226 0.71007044 0.70201966 0.72493634 0.71864504 0.74980994</span>
+<span class="s2"> 0.75215165 0.66989481 0.69782854 0.65943571 0.72222173 0.73865219</span>
+<span class="s2"> 0.73089016 0.7332863  0.66108707 0.66603208 0.78002479 0.70576228</span>
+<span class="s2"> 0.7233111  0.74481185 0.71809768 0.67158027 0.67499812 0.68877544</span>
+<span class="s2"> 0.74597282 0.74033863 0.74108693 0.73197968 0.69437376 0.71814851</span>
+<span class="s2"> 0.73902381 0.78810628 0.74227443 0.72808892 0.74238975 0.74341232</span>
+<span class="s2"> 0.73181625 0.71693515 0.7120154  0.80901455 0.73791632 0.7039191</span>
+<span class="s2"> 0.73975027 0.74148828 0.73797484 0.75891727 0.7425778  0.73702395</span>
+<span class="s2"> 0.82515963 0.74513962 0.74535757 0.74669693 0.81564215 0.77458839</span>
+<span class="s2"> 0.6632649  0.74573038 0.74114421 0.76871418 0.74039423 0.73604261</span>
+<span class="s2"> 0.73648897 0.77706511 0.74602715 0.74982021 0.75474785 0.68225045</span>
+<span class="s2"> 0.7374944  0.80554148 0.74447095 0.74259098 0.73740042 0.7412647</span>
+<span class="s2"> 0.7636001  0.69818216 0.72876709 0.75670409 0.71666736 0.73386415</span>
+<span class="s2"> 0.66496187 0.75295694 0.7948136  0.74033889 0.73793869 0.70988443</span>
+<span class="s2"> 0.66937093 0.66316353 0.71543277 0.53669152 0.73717412 0.74999821</span>
+<span class="s2"> 0.7036995  0.74357741 0.7517811  0.66405313 0.7392503  0.74540661</span>
+<span class="s2"> 0.5998909  0.70136277 0.76436973 0.72772763 0.74744606 0.73372038</span>
+<span class="s2"> 0.7800288  0.71928832 0.74191442 0.73983943 0.6608652  0.74202929</span>
+<span class="s2"> 0.74163821 0.74024331 0.73045769 0.72684026]</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">pyv_large</span> <span class="o">=</span> <span class="n">from_space_separated_list_string</span><span class="p">(</span><span class="n">pyv_large_str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">pyv_large</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.79266476, 0.72512741, 0.75770125, 0.74589342, 0.71605963,
+       0.70017296, 0.69334855, 0.74703596, 0.65792272, 0.647168  ,
+       0.72540885, 0.74261109, 0.50620217, 0.72738263, 0.71034887,
+       0.71203096, 0.71754102, 0.74421745, 0.72343766, 0.7433972 ,
+       0.53047738, 0.74730938, 0.66597011, 0.74039932, 0.82024847,
+       0.7413012 , 0.74222689, 0.80111206, 0.72656555, 0.7290188 ,
+       0.66643949, 0.74506248, 0.73535166, 0.81865412, 0.73665932,
+       0.72317049, 0.79296566, 0.78059468, 0.81502465, 0.73730433,
+       0.82078236, 0.82206396, 0.75279038, 0.81495854, 0.82693678,
+       0.75104129, 0.82313803, 0.81975847, 0.73864859, 0.90069661,
+       0.72384653, 0.7456472 , 0.74018311, 0.72777296, 0.73876595,
+       0.74453746, 0.74312851, 0.73946317, 0.74653767, 0.68233929,
+       0.72627779, 0.739423  , 0.82345582, 0.73025211, 0.75556541,
+       0.82403634, 0.76305639, 0.80184746, 0.78476215, 0.74224229,
+       0.8128701 , 0.82134161, 0.74128956, 0.68120847, 0.73768228,
+       0.73859693, 0.72708305, 0.6735519 , 0.67467689, 0.74238876,
+       0.73946243, 0.78938656, 0.7372054 , 0.66585517, 0.79815335,
+       0.82612482, 0.71650907, 0.66081252, 0.73664773, 0.70318903,
+       0.74348601, 0.74599391, 0.73825187, 0.76137169, 0.74942208,
+       0.69374546, 0.71124031, 0.72894298, 0.66454103, 0.65947286,
+       0.7397834 , 0.66471957, 0.7470059 , 0.6875372 , 0.69302998,
+       0.72233425, 0.73605803, 0.7435696 , 0.74143758, 0.67886141,
+       0.6627519 , 0.73464525, 0.74413187, 0.74406071, 0.74519924,
+       0.74370673, 0.67319197, 0.74264853, 0.66374194, 0.81565984,
+       0.71961536, 0.75306151, 0.73989515, 0.74306231, 0.77246791,
+       0.7601714 , 0.73880937, 0.74150941, 0.72215994, 0.71801496,
+       0.8168061 , 0.74155121, 0.74498165, 0.70539818, 0.67054027,
+       0.74609522, 0.72595371, 0.74550781, 0.74786944, 0.74990366,
+       0.72919926, 0.73281807, 0.69842756, 0.73679197, 0.6584514 ,
+       0.7258254 , 0.67307639, 0.74881927, 0.6666285 , 0.66069712,
+       0.67313246, 0.76942902, 0.73439786, 0.72433121, 0.64650378,
+       0.67262981, 0.74044789, 0.76660097, 0.72675456, 0.80613915,
+       0.73207149, 0.73940463, 0.74712921, 0.66630264, 0.70633669,
+       0.75063488, 0.74114265, 0.73766708, 0.66522801, 0.72595894,
+       0.74780995, 0.73986191, 0.7285815 , 0.74071044, 0.73547049,
+       0.73952944, 0.73785566, 0.74743714, 0.66220645, 0.70537104,
+       0.69692844, 0.74337418, 0.74158947, 0.73541522, 0.74694199,
+       0.74470062, 0.68473644, 0.74314018, 0.74629306, 0.74695446,
+       0.74062571, 0.71889012, 0.74784703, 0.81726048, 0.6988624 ,
+       0.81919572, 0.71261578, 0.7082859 , 0.82373968, 0.74481632,
+       0.78974083, 0.81280969, 0.74014151, 0.81846135, 0.79767023,
+       0.81803314, 0.81904913, 0.82028912, 0.824006  , 0.74083919,
+       0.75292197, 0.80643802, 0.74736437, 0.78531394, 0.82019723,
+       0.81683161, 0.7463695 , 0.7420429 , 0.7456357 , 0.74945907,
+       0.70877264, 0.73806771, 0.73424773, 0.74203003, 0.67709144,
+       0.73053085, 0.72218881, 0.73167361, 0.74217659, 0.74802448,
+       0.77345485, 0.74210006, 0.73915598, 0.73961839, 0.69547834,
+       0.7301866 , 0.65911285, 0.74137547, 0.74913588, 0.74745547,
+       0.74376965, 0.73712374, 0.72839676, 0.66041443, 0.77410949,
+       0.79005277, 0.66807113, 0.73512589, 0.71124809, 0.74016733,
+       0.74417247, 0.74489692, 0.6712282 , 0.74026326, 0.66857821,
+       0.74952711, 0.70437486, 0.72949907, 0.74205197, 0.71020374,
+       0.72756572, 0.72671442, 0.66865362, 0.6812844 , 0.72556488,
+       0.72491696, 0.6850356 , 0.74615557, 0.73800663, 0.7400123 ,
+       0.71012495, 0.6669754 , 0.82889006, 0.73990373, 0.73699592,
+       0.73095691, 0.77686184, 0.71429481, 0.75093801, 0.74715722,
+       0.68756304, 0.74391536, 0.74111924, 0.68271277, 0.66576857,
+       0.74360163, 0.71901628, 0.798497  , 0.74730226, 0.71007044,
+       0.70201966, 0.72493634, 0.71864504, 0.74980994, 0.75215165,
+       0.66989481, 0.69782854, 0.65943571, 0.72222173, 0.73865219,
+       0.73089016, 0.7332863 , 0.66108707, 0.66603208, 0.78002479,
+       0.70576228, 0.7233111 , 0.74481185, 0.71809768, 0.67158027,
+       0.67499812, 0.68877544, 0.74597282, 0.74033863, 0.74108693,
+       0.73197968, 0.69437376, 0.71814851, 0.73902381, 0.78810628,
+       0.74227443, 0.72808892, 0.74238975, 0.74341232, 0.73181625,
+       0.71693515, 0.7120154 , 0.80901455, 0.73791632, 0.7039191 ,
+       0.73975027, 0.74148828, 0.73797484, 0.75891727, 0.7425778 ,
+       0.73702395, 0.82515963, 0.74513962, 0.74535757, 0.74669693,
+       0.81564215, 0.77458839, 0.6632649 , 0.74573038, 0.74114421,
+       0.76871418, 0.74039423, 0.73604261, 0.73648897, 0.77706511,
+       0.74602715, 0.74982021, 0.75474785, 0.68225045, 0.7374944 ,
+       0.80554148, 0.74447095, 0.74259098, 0.73740042, 0.7412647 ,
+       0.7636001 , 0.69818216, 0.72876709, 0.75670409, 0.71666736,
+       0.73386415, 0.66496187, 0.75295694, 0.7948136 , 0.74033889,
+       0.73793869, 0.70988443, 0.66937093, 0.66316353, 0.71543277,
+       0.53669152, 0.73717412, 0.74999821, 0.7036995 , 0.74357741,
+       0.7517811 , 0.66405313, 0.7392503 , 0.74540661, 0.5998909 ,
+       0.70136277, 0.76436973, 0.72772763, 0.74744606, 0.73372038,
+       0.7800288 , 0.71928832, 0.74191442, 0.73983943, 0.6608652 ,
+       0.74202929, 0.74163821, 0.74024331, 0.73045769, 0.72684026])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_hist_large_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0</span>
+<span class="s2">   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0</span>
+<span class="s2">   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   1   1</span>
+<span class="s2">   0   0   0   0   0   1   0   0   0   0   2  27  16   9   9  15  18  32</span>
+<span class="s2">  45 130  25   8   8   5   8   7  11  19   1   0   0   0   0   0   0   1</span>
+<span class="s2">   0   0   0   0   0   0   0   0   0</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">y_hist_large</span> <span class="o">=</span> <span class="n">from_space_separated_list_string</span><span class="p">(</span><span class="n">y_hist_large_str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">y_hist_large</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+
+  <span class="n">File</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Python312</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">IPython</span>\<span class="n">core</span>\<span class="n">interactiveshell</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3553</span> <span class="ow">in</span> <span class="n">run_code</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">code_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_global_ns</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+
+  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+    <span class="n">y_hist_large</span> <span class="o">=</span> <span class="n">from_space_separated_list_string</span><span class="p">(</span><span class="n">y_hist_large_str</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+  <span class="n">File</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Python312</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">molass_legacy</span>\<span class="n">KekLib</span>\<span class="n">NumpyArrayUtils</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span> <span class="ow">in</span> <span class="n">from_space_separated_list_string</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">list_str</span><span class="p">))</span>
+
+  <span class="n">File</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>   <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pyv_large</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x265545e59d0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/902b210e35f594bb735027f34bee2965be52764e4b50f23095b0a7a06fd348e5.png" src="../../_images/902b210e35f594bb735027f34bee2965be52764e4b50f23095b0a7a06fd348e5.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters\81"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Molass Community powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
