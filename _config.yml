@@ -11,7 +11,7 @@ exclude_patterns: ["README.md"]
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  exclude_patterns: ["data_survey.ipynb", "decomposition", "sec_simulation.ipynb"]
+  exclude_patterns: ["data_survey.ipynb", "decomposition.ipynb", "sec_simulation.ipynb"]
 
 # Define the name of the latex output file for PDF builds
 latex:
