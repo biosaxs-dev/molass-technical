@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Molass Technical Report</title>
+    <title>7.3. Plate Number Constraints &#8212; Molass Technical Report</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,10 +57,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/80/temp';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/plate_number';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8. Advanced Elution Models" href="../50/advanced-models.html" />
+    <link rel="prev" title="7.2. Proportional Constaints" href="proportional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,25 +180,25 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01/customization.html">1. Customization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10/elution_range.html">2. Elution Range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/spectral_range.html">3. Spectral Range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../40/decomposition.html">7. Basic Decomposition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../40/default_decomposition.html">7.1. Default Decomposition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">7.2. Proportional Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/plate_number.html">7.3. Plate Number Constraints</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="decomposition.html">7. Basic Decomposition</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="default_decomposition.html">7.1. Default Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proportional.html">7.2. Proportional Constraints</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. Plate Number Constraints</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">9. Data Survey</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="trimming.html">10.1. Trimming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generation.html">10.2. Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_settings.html">10.3. Local Settings</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">10.1. Trimming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/generation.html">10.2. Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../80/local_settings.html">10.3. Local Settings</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../81/animation.html">11. Animation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -277,7 +277,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/80/temp.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/40/plate_number.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/80/temp.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/40/plate_number.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,9 +378,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -391,19 +389,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Plate Number Constraints</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -413,39 +403,64 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="plate-number-constraints">
+<h1><span class="section-number">7.3. </span>Plate Number Constraints<a class="headerlink" href="#plate-number-constraints" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;D:\Github\molass-library&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">molass.Global.Options</span> <span class="kn">import</span> <span class="n">set_molass_options</span>
-<span class="n">set_molass_options</span><span class="p">(</span><span class="n">flowchange</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">molass.Local</span> <span class="kn">import</span> <span class="n">get_local_settings</span>
-<span class="n">local_settings</span> <span class="o">=</span> <span class="n">get_local_settings</span><span class="p">()</span>
-<span class="n">ORIGINAL_DATA</span> <span class="o">=</span> <span class="n">local_settings</span><span class="p">[</span><span class="s1">&#39;ORIGINAL_DATA&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ORIGINAL_DATA</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.6.1&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.6.1 or higher.&quot;</span>
 <span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
-
-<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">ORIGINAL_DATA</span><span class="p">)</span>
-<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\PyTools\Data\sample_data
+<span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE2</span>
+<span class="n">ssd2</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE2</span><span class="p">)</span>
+<span class="n">trimmed_ssd2</span> <span class="o">=</span> <span class="n">ssd2</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
+<span class="n">corrected_ssd2</span> <span class="o">=</span> <span class="n">trimmed_ssd2</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">(</span><span class="n">view_init</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=-</span><span class="mi">30</span><span class="p">),</span> <span class="n">view_arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wide_margin_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomposition23</span> <span class="o">=</span> <span class="n">corrected_ssd2</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plot4</span> <span class="o">=</span> <span class="n">decomposition23</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Decomposition of Sample2 (num_components=3)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3064684549085b297fc5256dcd423cfed5c75d832a81aaff1c52f7e103e99f76.png" src="../../_images/3064684549085b297fc5256dcd423cfed5c75d832a81aaff1c52f7e103e99f76.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</pre></div>
+</div>
+<img alt="../../_images/d9da79ab3a96726f55930e47ac526bdbe45b0b343066e2e94dfe9ce650fc213f.png" src="../../_images/d9da79ab3a96726f55930e47ac526bdbe45b0b343066e2e94dfe9ce650fc213f.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomposition23n</span> <span class="o">=</span> <span class="n">corrected_ssd2</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num_plates</span><span class="o">=</span><span class="mi">14400</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># 14400 = 48000 * 30cm/100cm</span>
+<span class="n">plot5</span> <span class="o">=</span> <span class="n">decomposition23n</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Decomposition of Sample2 (num_components=3, num_plates=14400)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=120.0, main_peak=1, main_params=[7.64648137e-02 4.34096037e+02 1.68583674e+01 0.00000000e+00]
+</pre></div>
+</div>
+<img alt="../../_images/9a872fc22036095c495866cb5b70e0c3b6ea75222bf387a7cb95456834340e69.png" src="../../_images/9a872fc22036095c495866cb5b70e0c3b6ea75222bf387a7cb95456834340e69.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=120.0, main_peak=1, main_params=[9.24476040e-02 4.33898671e+02 1.79680320e+01 4.15631337e+00]
+</pre></div>
+</div>
+<img alt="../../_images/50420f189207f741ee144ede82b906d2346cb3083e4490187081ef7702b9416f.png" src="../../_images/50420f189207f741ee144ede82b906d2346cb3083e4490187081ef7702b9416f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>consistent_uv= True
+adjust_components_consistently entry: mapping= MappingInfo(slope=1.01, intercept=-1.53, xr_peaks=..., uv_peaks=..., xr_moment=..., uv_moment=...)
+</pre></div>
+</div>
+<img alt="../../_images/2e8ff3637d750a057cef39bfe13417f846b832b94a8b9f0c602d61a85dd087c1.png" src="../../_images/2e8ff3637d750a057cef39bfe13417f846b832b94a8b9f0c602d61a85dd087c1.png" />
+<img alt="../../_images/1765639997b11e130d03d04d95f86d217e180fc03b2653f35f87291fcb04a2fa.png" src="../../_images/1765639997b11e130d03d04d95f86d217e180fc03b2653f35f87291fcb04a2fa.png" />
+<img alt="../../_images/c524523fc54763dac2938a85c1fcc24129c5b79f272380dec31f34cc55402cd5.png" src="../../_images/c524523fc54763dac2938a85c1fcc24129c5b79f272380dec31f34cc55402cd5.png" />
+</div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -460,7 +475,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters\80"
+            path: "./chapters\40"
         },
         predefinedOutput: true
     }
@@ -477,27 +492,30 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="proportional.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Proportional Constaints</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../50/advanced-models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Advanced Elution Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

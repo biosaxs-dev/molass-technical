@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Baseline Models &#8212; Molass Technical Report</title>
+    <title>7.2. Proportional Constaints &#8212; Molass Technical Report</title>
   
   
   
@@ -57,12 +57,12 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/20/baselines';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/40/proportional';</script>
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Mapping between UV and X-ray Data" href="../30/mapping.html" />
-    <link rel="prev" title="4. Flow Change Detection" href="../12/flowchange.html" />
+    <link rel="next" title="7.3. Plate Number Constraints" href="plate_number.html" />
+    <link rel="prev" title="7.1. Default Decompositon" href="default_decomposition.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,12 +185,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../10/elution_range.html">2. Elution Range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/spectral_range.html">3. Spectral Range</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Baseline Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../40/decomposition.html">7. Basic Decomposition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../40/default_decomposition.html">7.1. Default Decomposition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">7.2. Proportional Constraints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../40/plate_number.html">7.3. Plate Number Constraints</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="decomposition.html">7. Basic Decomposition</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="default_decomposition.html">7.1. Default Decomposition</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.2. Proportional Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plate_number.html">7.3. Plate Number Constraints</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
@@ -277,7 +277,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/20/baselines.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/40/proportional.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/20/baselines.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/40/proportional.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,9 +378,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -391,19 +389,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Baseline Models</h1>
+    <h1>Proportional Constaints</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-points">5.1. Study Points</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -413,31 +403,175 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="baseline-models">
-<h1><span class="section-number">5. </span>Baseline Models<a class="headerlink" href="#baseline-models" title="Link to this heading">#</a></h1>
-<section id="study-points">
-<h2><span class="section-number">5.1. </span>Study Points<a class="headerlink" href="#study-points" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>ssd.plot_3d()</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="proportional-constaints">
+<h1><span class="section-number">7.2. </span>Proportional Constaints<a class="headerlink" href="#proportional-constaints" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE1</span>
-<span class="kn">from</span> <span class="nn">molass.Global.Options</span> <span class="kn">import</span> <span class="n">set_molass_options</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass</span> <span class="kn">import</span> <span class="n">get_version</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.5.2&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass version 0.5.2 or higher.&quot;</span>
+<span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">get_version</span>
+<span class="k">assert</span> <span class="n">get_version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;0.3.0&#39;</span><span class="p">,</span> <span class="s2">&quot;This tutorial requires molass_data version 0.3.0 or higher.&quot;</span>
+<span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE4</span>
 <span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
-<span class="n">set_molass_options</span><span class="p">(</span><span class="n">flowchange</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE1</span><span class="p">)</span>
-<span class="n">ssd</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">();</span>
+<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE4</span><span class="p">)</span>
+<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
+<span class="n">corrected_ssd</span> <span class="o">=</span> <span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">molass.Decompose.Proportional</span> <span class="kn">import</span> <span class="n">decompose_proportionally</span>
+<span class="n">icurve</span>  <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">xr</span><span class="o">.</span><span class="n">get_icurve</span><span class="p">()</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">icurve</span><span class="o">.</span><span class="n">get_xy</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">decompose_proportionally</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b69c32fa14c308ca2bfd095a097493a2fe289e10f76d92e7f2f184c831ca25a7.png" src="../../_images/b69c32fa14c308ca2bfd095a097493a2fe289e10f76d92e7f2f184c831ca25a7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.71855534 0.10826109 0.17318356]
+[0.49999669 0.33334145 0.16666185]
+</pre></div>
+</div>
+<img alt="../../_images/bfdb347f8cf15276e5b9cb2af8c042cc8f1a5c163c3f4fc34069818601c717a8.png" src="../../_images/bfdb347f8cf15276e5b9cb2af8c042cc8f1a5c163c3f4fc34069818601c717a8.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssd</span><span class="o">.</span><span class="n">plot_trimming</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       message: Maximum number of function evaluations has been exceeded.
+       success: False
+        status: 1
+           fun: -4.262727985617209
+             x: [ 5.122e-02  8.156e+01  7.883e+00  5.251e+00  2.585e-02
+                  9.890e+01  1.083e+01 -6.481e-03  1.128e-02  1.204e+02
+                  1.206e+01  6.805e+00]
+           nit: 1627
+          nfev: 2400
+ final_simplex: (array([[ 5.122e-02,  8.156e+01, ...,  1.206e+01,
+                         6.805e+00],
+                       [ 5.122e-02,  8.156e+01, ...,  1.206e+01,
+                         6.805e+00],
+                       ...,
+                       [ 5.122e-02,  8.156e+01, ...,  1.206e+01,
+                         6.805e+00],
+                       [ 5.122e-02,  8.156e+01, ...,  1.206e+01,
+                         6.805e+00]]), array([-4.263e+00, -4.263e+00, ..., -4.263e+00, -4.263e+00]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>203
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rgcurve</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">xr</span><span class="o">.</span><span class="n">compute_rgcurve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 203/203 [00:03&lt;00:00, 51.40it/s] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_trails</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">species1_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">num_trails</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">species2_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">num_trails</span><span class="p">)</span>
+<span class="n">proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">species1_proportions</span><span class="p">,</span> <span class="n">species2_proportions</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">proportions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.        , 1.        ],
+       [3.        , 1.28571429],
+       [3.        , 1.57142857],
+       [3.        , 1.85714286],
+       [3.        , 2.14285714],
+       [3.        , 2.42857143],
+       [3.        , 2.71428571],
+       [3.        , 3.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
+<span class="kn">import</span> <span class="nn">molass.Decompose.VaryUtils</span>
+<span class="n">reload</span><span class="p">(</span><span class="n">molass</span><span class="o">.</span><span class="n">Decompose</span><span class="o">.</span><span class="n">VaryUtils</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">molass.Decompose.VaryUtils</span> <span class="kn">import</span> <span class="n">plot_varied_decompositions</span>
+<span class="n">plot_varied_decompositions</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">,</span> <span class="n">best</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Github\molass-library\molass\Decompose\VaryUtils.py:52: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend()
+</pre></div>
+</div>
+<img alt="../../_images/2d30c81b7df3cfd4ea1ba4c59da64079e79429716ef93643bd411f02a1b53876.png" src="../../_images/2d30c81b7df3cfd4ea1ba4c59da64079e79429716ef93643bd411f02a1b53876.png" />
+<img alt="../../_images/411b7384e2366bf28ef0ba50a128f248aeaa180d5956936b54db33936b54b2ca.png" src="../../_images/411b7384e2366bf28ef0ba50a128f248aeaa180d5956936b54db33936b54b2ca.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species3_proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">num_trails</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="n">proportions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">species1_proportions</span><span class="p">,</span> <span class="n">species2_proportions</span><span class="p">,</span> <span class="n">species3_proportions</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">proportions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.        , 1.        , 1.        ],
+       [3.        , 1.28571429, 1.        ],
+       [3.        , 1.57142857, 1.        ],
+       [3.        , 1.85714286, 1.        ],
+       [3.        , 2.14285714, 1.        ],
+       [3.        , 2.42857143, 1.        ],
+       [3.        , 2.71428571, 1.        ],
+       [3.        , 3.        , 1.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_varied_decompositions</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">proportions</span><span class="p">,</span> <span class="n">rgcurve</span><span class="o">=</span><span class="n">rgcurve</span><span class="p">,</span> <span class="n">best</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2b3c7769732f4e5f0c7179ef09cb9bf43e1663e8f3d14dabfa313e9f099d1a90.png" src="../../_images/2b3c7769732f4e5f0c7179ef09cb9bf43e1663e8f3d14dabfa313e9f099d1a90.png" />
+<img alt="../../_images/943306f1f04c30840757f511fe2c51dcb185cfd110ec429998b02803529141a6.png" src="../../_images/943306f1f04c30840757f511fe2c51dcb185cfd110ec429998b02803529141a6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">molass_data</span> <span class="kn">import</span> <span class="n">SAMPLE1</span>
+<span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">SAMPLE1</span><span class="p">)</span>
+<span class="n">trimmed_ssd</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
+<span class="n">corrected_ssd</span> <span class="o">=</span> <span class="n">trimmed_ssd</span><span class="o">.</span><span class="n">corrected_copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -445,10 +579,19 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
 </pre></div>
 </div>
-<img alt="../../_images/6cb821c877632245673c0cba5871e6f111235cf9e91d4cea72ff2188a06de9dc.png" src="../../_images/6cb821c877632245673c0cba5871e6f111235cf9e91d4cea72ff2188a06de9dc.png" />
 </div>
 </div>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified_decomposition</span> <span class="o">=</span> <span class="n">corrected_ssd</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">proportions</span><span class="o">=</span><span class="p">[</span><span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">])</span>
+<span class="n">plot2</span> <span class="o">=</span> <span class="n">modified_decomposition</span><span class="o">.</span><span class="n">plot_components</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Modified Decomposition of Sample1 (num_components=3, proportions=[0.32, 0.20, 0.48])&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/70d29526adefb5c07a8b580a831e9f221d7423b191fad4a20322174ad4af270f.png" src="../../_images/70d29526adefb5c07a8b580a831e9f221d7423b191fad4a20322174ad4af270f.png" />
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -464,7 +607,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./chapters\20"
+            path: "./chapters\40"
         },
         predefinedOutput: true
     }
@@ -482,20 +625,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../12/flowchange.html"
+       href="default_decomposition.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Flow Change Detection</p>
+        <p class="prev-next-title"><span class="section-number">7.1. </span>Default Decompositon</p>
       </div>
     </a>
     <a class="right-next"
-       href="../30/mapping.html"
+       href="plate_number.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Mapping between UV and X-ray Data</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>Plate Number Constraints</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -505,21 +648,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study-points">5.1. Study Points</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

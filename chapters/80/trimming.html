@@ -187,7 +187,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../40/decomposition.html">7. Basic Decomposition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../40/default_decomposition.html">7.1. Default Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/proportional.html">7.2. Proportional Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../40/plate_number.html">7.3. Plate Number Constraints</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">9. Data Survey</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="about_data_sets.html">10. About Example Data Sets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -424,22 +429,13 @@ document.write(`
 <span class="n">original_data_folder</span> <span class="o">=</span> <span class="n">ORIGINAL_DATA</span>
 <span class="n">ssd0</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">original_data_folder</span><span class="p">)</span>
 <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">()</span>
-<span class="n">plot_result0</span> <span class="o">=</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">();</span>
+<span class="n">plot_result0</span> <span class="o">=</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_trimming</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ssd0</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">original_data_folder</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">plot_result0</span> <span class="o">=</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">();</span>
-
-<span class="ne">AttributeError</span>: &#39;SecSaxsData&#39; object has no attribute &#39;plot_trimming_info&#39;
-</pre></div>
-</div>
 <img alt="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" src="../../_images/7d517b26b88f7c149d2ff4d03173ff20edcc172873f570b316e167bdf4837b3e.png" />
+<img alt="../../_images/447dc37d1c14f6448677e58ac68b81ff53595856a9449bc33eb00b1dd284a7d2.png" src="../../_images/447dc37d1c14f6448677e58ac68b81ff53595856a9449bc33eb00b1dd284a7d2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -523,7 +519,9 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[67] copying from D:\PyTools\Data\sample_data\SAMPLE_00067_sub.dat to SAMPLE_00000_.dat
-[68] copying from D:\PyTools\Data\sample_data\SAMPLE_00068_sub.dat to SAMPLE_00001_.dat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[68] copying from D:\PyTools\Data\sample_data\SAMPLE_00068_sub.dat to SAMPLE_00001_.dat
 [69] copying from D:\PyTools\Data\sample_data\SAMPLE_00069_sub.dat to SAMPLE_00002_.dat
 [70] copying from D:\PyTools\Data\sample_data\SAMPLE_00070_sub.dat to SAMPLE_00003_.dat
 [71] copying from D:\PyTools\Data\sample_data\SAMPLE_00071_sub.dat to SAMPLE_00004_.dat
@@ -656,7 +654,12 @@ document.write(`
 [198] copying from D:\PyTools\Data\sample_data\SAMPLE_00198_sub.dat to SAMPLE_00131_.dat
 [199] copying from D:\PyTools\Data\sample_data\SAMPLE_00199_sub.dat to SAMPLE_00132_.dat
 [200] copying from D:\PyTools\Data\sample_data\SAMPLE_00200_sub.dat to SAMPLE_00133_.dat
-[201] copying from D:\PyTools\Data\sample_data\SAMPLE_00201_sub.dat to SAMPLE_00134_.dat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[201]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> copying from D:\PyTools\Data\sample_data\SAMPLE_00201_sub.dat to SAMPLE_00134_.dat
 [202] copying from D:\PyTools\Data\sample_data\SAMPLE_00202_sub.dat to SAMPLE_00135_.dat
 [203] copying from D:\PyTools\Data\sample_data\SAMPLE_00203_sub.dat to SAMPLE_00136_.dat
 [204] copying from D:\PyTools\Data\sample_data\SAMPLE_00204_sub.dat to SAMPLE_00137_.dat
@@ -781,7 +784,9 @@ document.write(`
 [323] copying from D:\PyTools\Data\sample_data\SAMPLE_00323_sub.dat to SAMPLE_00256_.dat
 [324] copying from D:\PyTools\Data\sample_data\SAMPLE_00324_sub.dat to SAMPLE_00257_.dat
 [325] copying from D:\PyTools\Data\sample_data\SAMPLE_00325_sub.dat to SAMPLE_00258_.dat
-[326] copying from D:\PyTools\Data\sample_data\SAMPLE_00326_sub.dat to SAMPLE_00259_.dat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[326] copying from D:\PyTools\Data\sample_data\SAMPLE_00326_sub.dat to SAMPLE_00259_.dat
 [327] copying from D:\PyTools\Data\sample_data\SAMPLE_00327_sub.dat to SAMPLE_00260_.dat
 [328] copying from D:\PyTools\Data\sample_data\SAMPLE_00328_sub.dat to SAMPLE_00261_.dat
 [329] copying from D:\PyTools\Data\sample_data\SAMPLE_00329_sub.dat to SAMPLE_00262_.dat
@@ -809,7 +814,9 @@ document.write(`
 [351] copying from D:\PyTools\Data\sample_data\SAMPLE_00351_sub.dat to SAMPLE_00284_.dat
 [352] copying from D:\PyTools\Data\sample_data\SAMPLE_00352_sub.dat to SAMPLE_00285_.dat
 [353] copying from D:\PyTools\Data\sample_data\SAMPLE_00353_sub.dat to SAMPLE_00286_.dat
-Temporary directory zipped at: C:\Users\takahashi\AppData\Local\Temp\tutorial_data.zip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temporary directory zipped at: C:\Users\takahashi\AppData\Local\Temp\tutorial_data.zip
 </pre></div>
 </div>
 </div>
@@ -818,74 +825,80 @@ Temporary directory zipped at: C:\Users\takahashi\AppData\Local\Temp\tutorial_da
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssd1</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
 <span class="n">ssd1</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">()</span>
-<span class="n">plot_result1</span> <span class="o">=</span> <span class="n">ssd1</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">();</span>
+<span class="n">plot_result1</span> <span class="o">=</span> <span class="n">ssd1</span><span class="o">.</span><span class="n">plot_trimming</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fa2b2bf588dbf3e91ebe931138a81a1cb1814913eb9d0c6ca1d45ffcce11d645.png" src="../../_images/fa2b2bf588dbf3e91ebe931138a81a1cb1814913eb9d0c6ca1d45ffcce11d645.png" />
-<img alt="../../_images/3b1cca2c5f30065a4f1678096fbed4f35362a24181156ea04e56ac34756e321a.png" src="../../_images/3b1cca2c5f30065a4f1678096fbed4f35362a24181156ea04e56ac34756e321a.png" />
+<img alt="../../_images/e325ef2174103d2db9ed8d47beb55811e46429520f124aebfd0327856b2fd384.png" src="../../_images/e325ef2174103d2db9ed8d47beb55811e46429520f124aebfd0327856b2fd384.png" />
+<img alt="../../_images/e2f1e4bfffe97114d7717e761711adc7941cd4f260f44a984b708186907e5622.png" src="../../_images/e2f1e4bfffe97114d7717e761711adc7941cd4f260f44a984b708186907e5622.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssd2</span> <span class="o">=</span> <span class="n">ssd0</span><span class="o">.</span><span class="n">trimmed_copy</span><span class="p">()</span>
 <span class="n">ssd2</span><span class="o">.</span><span class="n">plot_3d</span><span class="p">()</span>
-<span class="n">ssd2</span><span class="o">.</span><span class="n">plot_trimming_info</span><span class="p">()</span>
+<span class="n">ssd2</span><span class="o">.</span><span class="n">plot_trimming</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x20cef928cb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;molass.PlotUtils.PlotResult.PlotResult at 0x28f393b3440&gt;
 </pre></div>
 </div>
-<img alt="../../_images/6fd4d8149ba6580a6118eff642c70606f661054328a9a9c83b6a74fdc2a2290b.png" src="../../_images/6fd4d8149ba6580a6118eff642c70606f661054328a9a9c83b6a74fdc2a2290b.png" />
-<img alt="../../_images/1ead07443489a8163434fe430d5712d9a88bd3cf4c27eeaa7f2d08d114ced438.png" src="../../_images/1ead07443489a8163434fe430d5712d9a88bd3cf4c27eeaa7f2d08d114ced438.png" />
+<img alt="../../_images/27e7e1a1f70d23dcee856d59540b39f5ad3d09d78bb118b91f1b57a8332bcb86.png" src="../../_images/27e7e1a1f70d23dcee856d59540b39f5ad3d09d78bb118b91f1b57a8332bcb86.png" />
+<img alt="../../_images/cb847f9c8e6a06dbc2130839e337b86d82fc6dc78bfb38e77cae593cb2057f3a.png" src="../../_images/cb847f9c8e6a06dbc2130839e337b86d82fc6dc78bfb38e77cae593cb2057f3a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr_info</span> <span class="o">=</span> <span class="n">ssd1</span><span class="o">.</span><span class="n">quick_lowrank_info</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">consistent_uv</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">lr_info</span><span class="o">.</span><span class="n">plot_components</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decomposition</span> <span class="o">=</span> <span class="n">ssd1</span><span class="o">.</span><span class="n">quick_decomposition</span><span class="p">(</span><span class="n">num_components</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">consistent_uv</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">decomposition</span><span class="o">.</span><span class="n">plot_components</span><span class="p">();</span>
     
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developper memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
-C:\Program Files\Python312\Lib\site-packages\molass\PlotUtils\LowRankInfoPlot.py:133: RuntimeWarning: invalid value encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Program Files\Python312\Lib\site-packages\molass\LowRank\CurveDecomposer.py:194: OptimizeWarning: Initial guess is not within the specified bounds
+  res = minimize(fit_objective, init_params, method=&#39;Nelder-Mead&#39;, bounds=bounds)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>developer memo: remember that &quot;LowRank.CoupledAdjuster.select_components&quot; is not implemented yet.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Program Files\Python312\Lib\site-packages\molass\PlotUtils\DecompositionPlot.py:88: RuntimeWarning: invalid value encountered in log
   logy = np.log(pv[slice_])
 </pre></div>
 </div>
-<img alt="../../_images/72e2aa74930f3f3798105d79ee73ef0bc41e26189ddb85ce324c70084f422d62.png" src="../../_images/72e2aa74930f3f3798105d79ee73ef0bc41e26189ddb85ce324c70084f422d62.png" />
+<img alt="../../_images/99164227495bc2d91f0ec279207b4ddb2cd02b6f94755efe57ac97df10214220.png" src="../../_images/99164227495bc2d91f0ec279207b4ddb2cd02b6f94755efe57ac97df10214220.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ccurve</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lr_info</span><span class="o">.</span><span class="n">xr_ccurves</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ccurve</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decomposition</span><span class="o">.</span><span class="n">xr_ccurves</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">([</span><span class="n">i</span><span class="p">],</span> <span class="n">ccurve</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0] [5.33375194e-02 1.18383326e+02 1.12375405e+01 1.49006382e-01]
-[1] [6.53516865e-03 1.46905984e+02 9.67977090e+00 3.97678763e+00]
-[2] [ 2.74689524e-02  2.43103170e+02  1.12271272e+01 -3.14049514e+00]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0] [4.82429220e-02 1.15175557e+02 1.04098695e+01 4.46646480e+00]
+[1] [ 1.18487582e-02  1.30900681e+02  1.04098695e+01 -1.76886830e-03]
+[2] [ 2.73431106e-02  2.41337808e+02  1.10085056e+01 -4.20560775e-03]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ccurve</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lr_info</span><span class="o">.</span><span class="n">uv_ccurves</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ccurve</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">decomposition</span><span class="o">.</span><span class="n">uv_ccurves</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">([</span><span class="n">i</span><span class="p">],</span> <span class="n">ccurve</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0] [8.82038073e-02 2.35753508e+02 2.25664432e+01 2.99224198e-01]
-[1] [2.86064869e-02 2.93030716e+02 1.94382391e+01 7.98590686e+00]
-[2] [ 1.15902609e-01  4.86207178e+02  2.25455318e+01 -6.30652276e+00]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0] [6.97357518e-02 2.29311891e+02 2.09043722e+01 8.96924233e+00]
+[1] [ 3.49438631e-02  2.60889985e+02  2.09043721e+01 -3.55211764e-03]
+[2] [ 1.16629085e-01  4.82662103e+02  2.21065113e+01 -8.44540744e-03]
 </pre></div>
 </div>
 </div>

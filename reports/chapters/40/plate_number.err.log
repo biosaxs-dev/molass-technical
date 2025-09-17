@@ -18,22 +18,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from molass.Global.Options import set_molass_options
+from molass import get_version
+assert get_version() >= '0.6.2', "This tutorial requires molass version 0.6.2 or higher."
 from molass.DataObjects import SecSaxsData as SSD
-set_molass_options(flowchange=True)
-original_data_folder = ORIGINAL_DATA
-ssd0 = SSD(original_data_folder)
-ssd0.plot_3d()
-plot_result0 = ssd0.plot_trimming_info();
+from molass_data import SAMPLE2
+ssd2 = SSD(SAMPLE2)
+trimmed_ssd2 = ssd2.trimmed_copy()
+corrected_ssd2 = trimmed_ssd2.corrected_copy()
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [1;32mIn[2], line 7[0m
-[0;32m      5[0m ssd0 [38;5;241m=[39m SSD(original_data_folder)
-[0;32m      6[0m ssd0[38;5;241m.[39mplot_3d()
-[1;32m----> 7[0m plot_result0 [38;5;241m=[39m [43mssd0[49m[38;5;241;43m.[39;49m[43mplot_trimming_info[49m();
+[1;31mAssertionError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[1], line 2[0m
+[0;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmolass[39;00m [38;5;28;01mimport[39;00m get_version
+[1;32m----> 2[0m [38;5;28;01massert[39;00m get_version() [38;5;241m>[39m[38;5;241m=[39m [38;5;124m'[39m[38;5;124m0.6.2[39m[38;5;124m'[39m, [38;5;124m"[39m[38;5;124mThis tutorial requires molass version 0.6.2 or higher.[39m[38;5;124m"[39m
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmolass[39;00m[38;5;21;01m.[39;00m[38;5;21;01mDataObjects[39;00m [38;5;28;01mimport[39;00m SecSaxsData [38;5;28;01mas[39;00m SSD
+[0;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmolass_data[39;00m [38;5;28;01mimport[39;00m SAMPLE2
 
-[1;31mAttributeError[0m: 'SecSaxsData' object has no attribute 'plot_trimming_info'
+[1;31mAssertionError[0m: This tutorial requires molass version 0.6.2 or higher.
 

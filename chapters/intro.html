@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -188,7 +188,12 @@
 <li class="toctree-l1"><a class="reference internal" href="12/flowchange.html">4. Flow Change Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20/baselines.html">5. Baseline Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="30/mapping.html">6. Mapping between UV and X-ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="40/decomposition.html">7. Curve Decomposition</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="40/decomposition.html">7. Basic Decomposition</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="40/default_decomposition.html">7.1. Default Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/proportional.html">7.2. Proportional Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="40/plate_number.html">7.3. Plate Number Constraints</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="50/advanced-models.html">8. Advanced Elution Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="70/data_survey.html">9. Data Survey</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="80/about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -415,7 +420,7 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>This book is scheduled to be publicly available in October 2025.</p>
 </div>
-<p>Molass Library is a rewrite of <a class="reference external" href="https://pfwww.kek.jp/saxs/MOLASSE.html">MOLASS</a>, an analytical tool for SEC-SAXS experiment data currently hosted at <a class="reference external" href="https://www2.kek.jp/imss/pf/eng/">Photon Factory</a> or <a class="reference external" href="http://www.spring8.or.jp/en/">SPring-8</a>, Japan. It is designed for scripting in Jupyter Notebooks, providing greater flexibility than its predecessor thanks to the diversity of the Python ecosystem.</p>
+<p>Molass Library is a rewrite of <a class="reference external" href="https://pfwww.kek.jp/saxs/MOLASSE.html">MOLASS</a>, an analytical tool for SEC-SAXS experiment data currently hosted at <a class="reference external" href="https://www2.kek.jp/imss/pf/eng/">Photon Factory</a> and <a class="reference external" href="http://www.spring8.or.jp/en/">SPring-8</a>, Japan. It is designed for scripting in Jupyter Notebooks, providing greater flexibility than its predecessor thanks to the diversity of the Python ecosystem.</p>
 <p>This document collects technical details and topics that do not fit into the Molass Library Tutorial (for users) or Essence (for researchers). It is intended for readers interested in the inner workings, design choices, and advanced features of the Molass</p>
 <p>See also as you proceed:</p>
 <ul class="simple">
