@@ -19,7 +19,14 @@ chapters:
 - file: chapters/30/mapping
   title: Mapping between UV and X-ray
 - file: chapters/40/decomposition
-  title: Curve Decomposition
+  title: Basic Decomposition
+  sections:
+  - file: chapters/40/default_decomposition
+    title: Default Decomposition
+  - file: chapters/40/proportional
+    title: Proportional Constraints
+  - file: chapters/40/plate_number
+    title: Plate Number Constraints
 - file: chapters/50/advanced-models
   title: Advanced Elution Models
 - file: chapters/70/data_survey
