@@ -1,10 +1,6 @@
 # Molass Technical Report
 
-```{warning}
-This book is scheduled to be publicly available in October 2025.
-```
-
-Molass Library is a rewrite of [MOLASS](https://pfwww.kek.jp/saxs/MOLASSE.html), an analytical tool for SEC-SAXS experiment data currently hosted at [Photon Factory](https://www2.kek.jp/imss/pf/eng/) and [SPring-8](http://www.spring8.or.jp/en/), Japan. It is designed for scripting in Jupyter Notebooks, providing greater flexibility than its predecessor thanks to the diversity of the Python ecosystem.
+Molass Library is a rewrite of [MOLASS](https://pfwww.kek.jp/saxs/MOLASSE.html), a tool for the analysis of SEC-SAXS experiment data currently hosted at [Photon Factory](https://www2.kek.jp/imss/pf/eng/) and [SPring-8](http://www.spring8.or.jp/en/), Japan. It is designed for scripting in Jupyter Notebooks, providing greater flexibility than its predecessor thanks to the diversity of Python ecosystem.
 
 This document collects technical details and topics that do not fit into the Molass Library Tutorial (for users) or Essence (for researchers). It is intended for readers interested in the inner workings, design choices, and advanced features of the Molass
 
