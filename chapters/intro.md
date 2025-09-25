@@ -4,12 +4,12 @@ Molass Library is a rewrite of [MOLASS](https://pfwww.kek.jp/saxs/MOLASSE.html),
 
 This document collects technical details and topics that do not fit into the Molass Library Tutorial (for users) or Essence (for researchers). It is intended for readers interested in the inner workings, design choices, and advanced features of the Molass
 
-See also as you proceed:
+As you proceed, you may also find the following resources helpful:
 
-* [Molass Library Tutorial](https://nshimizu0721.github.io/molass-tutorial/) for how to use,
-* [Molass Library Essence](https://nshimizu0721.github.io/molass-essence/) for theory,
-* [Molass Library Reference](https://nshimizu0721.github.io/molass-library/) for function reference,
-* [Molass Library Repository](https://github.com/nshimizu0721/molass-library) for source code.
+* [Molass Library Tutorial](https://nshimizu0721.github.io/molass-tutorial/) on how to use for begginners,
+* [Molass Library Essence](https://nshimizu0721.github.io/molass-essence/) on theory for researchers,
+* [Molass Library Reference](https://nshimizu0721.github.io/molass-library/) on function reference for coding,
+* [Molass Library Repository](https://github.com/nshimizu0721/molass-library) on source code for implementation.
 
 ## Acknowledgments
 
