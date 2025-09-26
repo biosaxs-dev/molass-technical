@@ -6,10 +6,10 @@ This document collects technical details and topics that do not fit into the Mol
 
 As you proceed, you may also find the following resources helpful:
 
-* [Molass Library Tutorial](https://nshimizu0721.github.io/molass-tutorial/) on how to use for begginners,
-* [Molass Library Essence](https://nshimizu0721.github.io/molass-essence/) on theory for researchers,
-* [Molass Library Reference](https://nshimizu0721.github.io/molass-library/) on function reference for coding,
-* [Molass Library Repository](https://github.com/nshimizu0721/molass-library) on source code for implementation.
+* [Molass Library Tutorial](https://molass-saxs.github.io/molass-tutorial/) on how to use for begginners,
+* [Molass Library Essence](https://molass-saxs.github.io/molass-essence/) on theory for researchers,
+* [Molass Library Reference](https://molass-saxs.github.io/molass-library/) on function reference for coding,
+* [Molass Library Repository](https://github.com/molass-saxs/molass-library) on source code for implementation.
 
 ## Acknowledgments
 
