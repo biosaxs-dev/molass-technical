@@ -30,7 +30,12 @@ chapters:
 - file: chapters/50/advanced-models
   title: Advanced Elution Models
 - file: chapters/70/data_survey
-  title: Data Survey
+  title: Data Survey and Robustness Testing
+  sections:
+  - file: chapters/70/folder_walker
+    title: UV-Vis Data Survey
+  - file: chapters/70/robustness_testing
+    title: X-ray Data Survey
 - file: chapters/80/about_data_sets
   title: About Example Data Sets
   sections:
