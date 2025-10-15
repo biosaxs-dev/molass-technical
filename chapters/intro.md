@@ -6,11 +6,11 @@ This document collects technical details and topics that do not fit into the Mol
 
 As you proceed, you may also find the following resources helpful:
 
-* [Molass Library Tutorial](https://molass-saxs.github.io/molass-tutorial/) on how to use for begginners,
-* [Molass Library Essence](https://molass-saxs.github.io/molass-essence/) on theory for researchers,
-* [Molass Library Reference](https://molass-saxs.github.io/molass-library/) on function reference for coding,
-* [Molass Library Repository](https://github.com/molass-saxs/molass-library) on source code for implementation.
+* [Molass Library Tutorial](https://biosaxs-dev.github.io/molass-tutorial/) on how to use for begginners,
+* [Molass Library Essence](https://biosaxs-dev.github.io/molass-essence/) on theory for researchers,
+* [Molass Library Reference](https://biosaxs-dev.github.io/molass-library/) on function reference for coding,
+* [Molass Library Repository](https://github.com/biosaxs-dev/molass-library) on source code for implementation.
 
-## Acknowledgments
+## Acknowledgements
 
 Parts of this tutorial were created with the assistance of [GitHub Copilot](https://github.com/features/copilot).
