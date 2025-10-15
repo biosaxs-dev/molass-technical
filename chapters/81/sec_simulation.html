@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -193,7 +193,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">9. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../70/data_survey.html">9. Data Survey and Robustness Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../70/folder_walker.html">9.1. UV-Vis Data Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../70/robustness_testing.html">9.2. X-ray Data Survey</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">10.1. Trimming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../80/generation.html">10.2. Generation</a></li>
@@ -259,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical" target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -276,7 +280,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/81/sec_simulation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/81/sec_simulation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,14 +425,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>radius_map= [0.008 0.003 0.001]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/100 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -444,15 +440,6 @@ document.write(`
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Save the animation as an HTML file</span>
     <span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;sec-saxs.gif&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▌         | 6/100 [00:09&lt;02:25,  1.55s/it]D:\GitHub\molass-library\molass\SEC\StationaryMove.py:73: RuntimeWarning: divide by zero encountered in scalar divide
-  m = (py - cy)/(px - cx)
-D:\GitHub\molass-library\molass\SEC\StationaryMove.py:51: RuntimeWarning: invalid value encountered in scalar add
-  temp = -2 * (a * x1 + b * y1 + c) /(a * a + b * b)
- 99%|█████████▉| 99/100 [02:27&lt;00:01,  1.45s/it]
 </pre></div>
 </div>
 </div>

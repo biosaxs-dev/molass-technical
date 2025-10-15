@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Data Survey &#8212; Molass Technical Report</title>
+    <title>9. Data Survey and Robustness Testing &#8212; Molass Technical Report</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -61,7 +61,7 @@
     <link rel="icon" href="../../_static/molamola.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. About Example Data Sets" href="../80/about_data_sets.html" />
+    <link rel="next" title="9.1. Folder Walker" href="folder_walker.html" />
     <link rel="prev" title="8. Advanced Elution Models" href="../50/advanced-models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -194,7 +194,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Data Survey</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">9. Data Survey and Robustness Testing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="folder_walker.html">9.1. UV-Vis Data Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="robustness_testing.html">9.2. X-ray Data Survey</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">10.1. Trimming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../80/generation.html">10.2. Generation</a></li>
@@ -260,7 +264,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical" target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +281,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/70/data_survey.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/70/data_survey.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +311,7 @@
       
       
       
-      <li><a href="../../_sources/chapters/70/data_survey.ipynb" target="_blank"
+      <li><a href="../../_sources/chapters/70/data_survey.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +321,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -378,9 +382,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -391,19 +393,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Survey</h1>
+    <h1>Data Survey and Robustness Testing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-walker">9.1. Folder Walker</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -413,79 +407,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-survey">
-<h1><span class="section-number">9. </span>Data Survey<a class="headerlink" href="#data-survey" title="Link to this heading">#</a></h1>
-<section id="folder-walker">
-<h2><span class="section-number">9.1. </span>Folder Walker<a class="headerlink" href="#folder-walker" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../../../molass-library&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;../../../molass-legacy&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">molass.Local</span> <span class="kn">import</span> <span class="n">get_local_settings</span>
-<span class="kn">from</span> <span class="nn">molass.DataUtils.FolderWalker</span> <span class="kn">import</span> <span class="n">walk_folders</span>
-<span class="kn">from</span> <span class="nn">molass.Global.Options</span> <span class="kn">import</span> <span class="n">set_molass_options</span>
-<span class="n">set_molass_options</span><span class="p">(</span><span class="n">flowchange</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">local_settings</span> <span class="o">=</span> <span class="n">get_local_settings</span><span class="p">()</span>
-<span class="n">DATA_ROOT_FOLDER</span> <span class="o">=</span> <span class="n">local_settings</span><span class="p">[</span><span class="s1">&#39;DATA_ROOT_FOLDER&#39;</span><span class="p">]</span>
-<span class="kn">from</span> <span class="nn">molass.DataObjects</span> <span class="kn">import</span> <span class="n">SecSaxsData</span> <span class="k">as</span> <span class="n">SSD</span>
-
-<span class="n">output_folder</span> <span class="o">=</span> <span class="s2">&quot;figs&quot;</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">walk_folders</span><span class="p">(</span><span class="n">DATA_ROOT_FOLDER</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">([</span><span class="n">k</span><span class="p">],</span> <span class="n">path</span><span class="p">)</span>
-    <span class="n">ssd</span> <span class="o">=</span> <span class="n">SSD</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">remove_bubbles</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">ssd</span><span class="o">.</span><span class="n">uv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No UV data found in </span><span class="si">%s</span><span class="s2">, skipping.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
-        <span class="k">continue</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Compact Plot for </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">path</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">ssd</span><span class="o">.</span><span class="n">plot_compact</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">result</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">&quot;plot_</span><span class="si">%03d</span><span class="s2">.png&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">))</span>
-    <span class="n">result</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="k">break</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-survey-and-robustness-testing">
+<h1><span class="section-number">9. </span>Data Survey and Robustness Testing<a class="headerlink" href="#data-survey-and-robustness-testing" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0] D:\PyTools\Data\20160227\backsub
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] D:\PyTools\Data\20160628
-[4] h_ratio= 0.02911284350190842
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10919: RuntimeWarning: invalid value encountered in scalar divide
-  slope = ssxym / ssxm
-c:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10933: RuntimeWarning: invalid value encountered in sqrt
-  t = r * np.sqrt(df / ((1.0 - r + TINY)*(1.0 + r + TINY)))
-c:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10936: RuntimeWarning: invalid value encountered in scalar divide
-  slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2] D:\PyTools\Data\20161006\OA01\Backsub
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zeros at the angular ends of error data have been replaced with the adjacent values.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5] h_ratio= 0.029232230413578555
-[3] D:\PyTools\Data\20161104\BL-10C\Ald
-[4] D:\PyTools\Data\20161104\BL-10C\OA
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -528,11 +453,11 @@ c:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10936: Run
       </div>
     </a>
     <a class="right-next"
-       href="../80/about_data_sets.html"
+       href="folder_walker.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>About Example Data Sets</p>
+        <p class="prev-next-title"><span class="section-number">9.1. </span>Folder Walker</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -542,21 +467,6 @@ c:\Program Files\Python312\Lib\site-packages\scipy\stats\_stats_py.py:10936: Run
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-walker">9.1. Folder Walker</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

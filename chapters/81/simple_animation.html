@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -194,7 +194,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../50/advanced-models.html">8. Advanced Elution Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../70/data_survey.html">9. Data Survey</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../70/data_survey.html">9. Data Survey and Robustness Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../70/folder_walker.html">9.1. UV-Vis Data Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../70/robustness_testing.html">9.2. X-ray Data Survey</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../80/about_data_sets.html">10. About Example Data Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../80/trimming.html">10.1. Trimming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../80/generation.html">10.2. Generation</a></li>
@@ -260,7 +264,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical" target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +281,7 @@
       
       
       
-      <li><a href="https://github.com/freesemt/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/81/simple_animation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/biosaxs-dev/molass-technical/issues/new?title=Issue%20on%20page%20%2Fchapters/81/simple_animation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -620,42 +624,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img8de1dfd9e6534574a0a3a64fb1dd4a8e">
+  <img id="_anim_imgb2d12b69f4544a98b3381a08029c0c90">
   <div class="anim-controls">
-    <input id="_anim_slider8de1dfd9e6534574a0a3a64fb1dd4a8e" type="range" class="anim-slider"
+    <input id="_anim_sliderb2d12b69f4544a98b3381a08029c0c90" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.set_frame(parseInt(this.value));">
+           oninput="animb2d12b69f4544a98b3381a08029c0c90.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="animb2d12b69f4544a98b3381a08029c0c90.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="animb2d12b69f4544a98b3381a08029c0c90.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="animb2d12b69f4544a98b3381a08029c0c90.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="animb2d12b69f4544a98b3381a08029c0c90.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="animb2d12b69f4544a98b3381a08029c0c90.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.play_animation()">
+      <button title="Play" aria-label="Play" onclick="animb2d12b69f4544a98b3381a08029c0c90.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="animb2d12b69f4544a98b3381a08029c0c90.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="animb2d12b69f4544a98b3381a08029c0c90.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="anim8de1dfd9e6534574a0a3a64fb1dd4a8e.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="animb2d12b69f4544a98b3381a08029c0c90.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select8de1dfd9e6534574a0a3a64fb1dd4a8e"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectb2d12b69f4544a98b3381a08029c0c90"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_8de1dfd9e6534574a0a3a64fb1dd4a8e"
+      <input type="radio" name="state" value="once" id="_anim_radio1_b2d12b69f4544a98b3381a08029c0c90"
              >
-      <label for="_anim_radio1_8de1dfd9e6534574a0a3a64fb1dd4a8e">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_8de1dfd9e6534574a0a3a64fb1dd4a8e"
+      <label for="_anim_radio1_b2d12b69f4544a98b3381a08029c0c90">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_b2d12b69f4544a98b3381a08029c0c90"
              checked>
-      <label for="_anim_radio2_8de1dfd9e6534574a0a3a64fb1dd4a8e">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_8de1dfd9e6534574a0a3a64fb1dd4a8e"
+      <label for="_anim_radio2_b2d12b69f4544a98b3381a08029c0c90">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_b2d12b69f4544a98b3381a08029c0c90"
              >
-      <label for="_anim_radio3_8de1dfd9e6534574a0a3a64fb1dd4a8e">Reflect</label>
+      <label for="_anim_radio3_b2d12b69f4544a98b3381a08029c0c90">Reflect</label>
     </form>
   </div>
 </div>
@@ -665,9 +669,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img8de1dfd9e6534574a0a3a64fb1dd4a8e";
-    var slider_id = "_anim_slider8de1dfd9e6534574a0a3a64fb1dd4a8e";
-    var loop_select_id = "_anim_loop_select8de1dfd9e6534574a0a3a64fb1dd4a8e";
+    var img_id = "_anim_imgb2d12b69f4544a98b3381a08029c0c90";
+    var slider_id = "_anim_sliderb2d12b69f4544a98b3381a08029c0c90";
+    var loop_select_id = "_anim_loop_selectb2d12b69f4544a98b3381a08029c0c90";
     var frames = new Array(50);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAA10dzkAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -16346,7 +16350,7 @@ iIjIwbAAEhERETmY/wfXn26z/xOHwwAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim8de1dfd9e6534574a0a3a64fb1dd4a8e = new Animation(frames, img_id, slider_id, 200.0,
+        animb2d12b69f4544a98b3381a08029c0c90 = new Animation(frames, img_id, slider_id, 200.0,
                                  loop_select_id);
     }, 0);
   })()
